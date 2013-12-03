@@ -1,0 +1,17 @@
+Write a program that prints "HELLO WORLD"
+
+-----------------------------------------------------
+HINTS:
+
+To make a Node.js program, creat blah blah blah....
+
+You can write to the console the same way as in the browser:
+
+  console.log("text")
+
+When you are done, you must run:
+
+  {appname} verify myprogram.js
+
+Your program will be tested, a report will be generated, 
+and the lesson will be marked "completed" if you are successful.
