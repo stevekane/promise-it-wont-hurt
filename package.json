@@ -16,9 +16,10 @@
   ],
   "author": "Steven Kane",
   "license": "BSD",
-  "bin", : "./promise.js",
-  "preferGlobal" : true,
+  "bin": "./promise.js",
+  "preferGlobal": true,
   "dependencies": {
-    "workshopper": "~0.4.1"
+    "workshopper": "~0.4.1",
+    "q": "~0.9.7"
   }
 }

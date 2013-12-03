@@ -1,0 +1,1 @@
+Here is a problem in which you will be given data on standard in

@@ -1,0 +1,36 @@
+{bold}Introduction{/bold}
+
+What is a promise?
+
+A promise is an object that defines a method called "then".
+The promise object represents a value (or values) that may
+be available some time in the future.  
+
+When a promise is resolved, any "success functions" registered 
+with the "then" method will be called with the newly available data as arguments.  
+
+If a promise is rejected then any "failure functions" registered 
+with the "then" method will be called with the Error as argument.
+
+For now, do not be concerned with exactly HOW this works or what the syntax is.
+We are about to dive into that in detail
+
+{bold}Task{/bold}
+Use the popular "Q" library to create a promise.  
+
+Pass console.log to the "then" method of your promise.
+
+Manually resolve that promise using setTimeout with a delay of 300ms;
+
+In Q, promises are created using Q.defer();
+
+The defer that is created is not exactly the promise and in order to return the actual
+promise object itself you must return the "promise" attribute of the newly created defer.
+
+{bold}Boilerplate{/bold}
+
+  var q = require('q');
+  var defer = q.defer(); 
+  //defer.promise is the actual promise itself
+  //defer.promise.then is the "Q" way of attaching a then handler
+  //your solution here 
