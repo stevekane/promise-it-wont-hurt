@@ -1,0 +1,24 @@
+{
+  "name": "promise-it-wont-hurt",
+  "version": "0.0.1",
+  "description": "This is a Workshop module for learning about promises in node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stevekane/promise-it-wont-hurt.git"
+  },
+  "keywords": [
+    "nodeschool",
+    "promises"
+  ],
+  "author": "Steven Kane",
+  "license": "BSD",
+  "bin", : "./promise.js",
+  "preferGlobal" : true,
+  "dependencies": {
+    "workshopper": "~0.4.1"
+  }
+}
