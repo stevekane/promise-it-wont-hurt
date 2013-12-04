@@ -1,6 +1,7 @@
 [
-  "resolve_a_promise",
+  "fulfill_a_promise",
   "reject_a_promise",
+  "to_reject_or_not_to_reject",
   "always_async",
   "throw_an_error",
   "using_qfcall"
