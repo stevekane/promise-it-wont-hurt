@@ -9,6 +9,7 @@ You can expect that the functions passed to the "then" method of a promise will 
 called on the NEXT turn of the event loop.
 
 {bold}Task{/bold}
+
 In this lesson, we are going to prove to ourselves that this is the case by 
 writing a script that does the following:
 

@@ -13,7 +13,20 @@ with the "then" method will be called with the Error as argument.
 For now, do not be concerned with exactly HOW this works or what the syntax is.
 We are about to dive into that in detail
 
+{bold}Setup{/bold}
+
+To do many of the lessons in this workshop, you will need to install the "q" module.
+To do this, type the following in your project's directory:
+
+npm install q --save
+
+This will install a local copy of the "q" module into your directory which you can
+import into file you have written using:
+
+var q = require('q');
+
 {bold}Task{/bold}
+
 Use the popular "Q" library to create a promise.  
 
 Pass console.log to the "then" method of your promise.
