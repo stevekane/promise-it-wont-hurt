@@ -3,7 +3,9 @@
   "reject_a_promise",
   "to_reject_or_not_to_reject",
   "always_async",
+  "values_and_promises",
   "throw_an_error",
   "using_qfcall",
-  "an_important_rule"
+  "an_important_rule",
+  "multiple_promises"
 ]
