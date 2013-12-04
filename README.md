@@ -19,7 +19,13 @@ and error handling.
 
 ## Installation & Update
 
+Create a new directory to do your workshop work in.  Let's call it "promise-shop".
+You will need to initialize npm in this repo and then use npm to install "q".
+
 ```
+$ mkdir promise-shop && cd promise-shop
+$ npm init
+$ npm install q
 $ npm install -g promise-it-wont-hurt@latest
 ```
 
