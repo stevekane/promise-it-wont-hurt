@@ -1,6 +1,4 @@
-{bold}Introduction{/bold}
-
-What is a promise?
+{bold}What is a promise?{/bold}
 
 A promise is an object that defines a method called "then".
 The promise object represents a value (or values) that may
@@ -20,7 +18,8 @@ Use the popular "Q" library to create a promise.
 
 Pass console.log to the "then" method of your promise.
 
-Manually resolve that promise using setTimeout with a delay of 300ms;
+Manually resolve that promise using setTimeout with a delay of 300ms and pass
+it a parameter of "RESOLVED!".
 
 In Q, promises are created using Q.defer();
 

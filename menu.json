@@ -1,5 +1,6 @@
 [
-  "hello_world",
-  "test_data",
-  "return_a_promise"
+  "resolve_a_promise",
+  "reject_a_promise",
+  "always_async",
+  "throw_an_error"
 ]
