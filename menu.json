@@ -2,5 +2,6 @@
   "resolve_a_promise",
   "reject_a_promise",
   "always_async",
-  "throw_an_error"
+  "throw_an_error",
+  "using_qfcall"
 ]
