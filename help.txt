@@ -6,7 +6,11 @@ stream-adventure.
 
 This module makes heavy use of the q module, which can be found at:
 
-https://github.com/kriskowal/g
+https://github.com/kriskowal/q
+
+Additionally, the later lessons use the q-io module, which is found at:
+
+https://github.com/kriskowal/q-io
 
 Several other promise modules that are popular are listed below:
 
