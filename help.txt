@@ -1,1 +1,22 @@
-THIS IS GREAT TEXT FOR YOU AND FOR ME
+Welcome to Promise it won't hurt! -- an automated workshop explaining how 
+to use promises effectively in both browser and serverside javascript.
+
+This module is built on the workshopper module originally extracted from 
+stream-adventure.
+
+This module makes heavy use of the q module, which can be found at:
+
+https://github.com/kriskowal/g
+
+Several other promise modules that are popular are listed below:
+
+https://github.com/petkaantonov/bluebird
+https://github.com/tildeio/rsvp.js
+
+Issues?  Suggestions?  Feedback?
+
+https://github.com/stevekane/promise-it-wont-hurt/issues
+
+Other awesome workshops found at:
+
+http://nodeschool.io
