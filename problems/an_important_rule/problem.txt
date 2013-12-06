@@ -1,6 +1,6 @@
 {bold}There's always a catch....(lol pun){/bold}
 
-Promises are designed to emulate syncronous control flows.
+Promises are designed to emulate synchronous control flows.
 If any of them throw an exception, the exception will bubble up 
 through the stack until it is caught by a catch block or 
 hits the global context where it will be thrown.
@@ -36,7 +36,7 @@ Remember: A promise can NEVER resolve more than once.
 It is, therefore, a best practice to always put a rejection handler 
 at the bottom of your promise chain (much like a catch block).
 
-It is worth pointing out that both the syncronous AND asyncronous 
+It is worth pointing out that both the synchronous AND asynchronous 
 code have the same problem.  If the rejection handler itself throws
 an error you are going to have a bad time.  
 

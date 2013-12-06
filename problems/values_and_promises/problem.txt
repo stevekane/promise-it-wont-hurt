@@ -7,7 +7,7 @@ it allows you to intermix values with promises in a chain.
 
 Imagine that you have a a cache of models that may already contain
 a model you would like to request from the server.  You could 
-check your cache syncronously and return the found value OR send
+check your cache synchronously and return the found value OR send
 an ajax request to your remote server to fetch it.  
 
 Wrapping this functionality in a promise means that both behaviors
@@ -23,7 +23,7 @@ doSomeSetup()
 .then(null, handleError);
 
 The key thing to understand here is that your handlers will WRAP
-your return values in promises even if they are obtained syncronously.
+your return values in promises even if they are obtained synchronously.
 
 Another very important point to understand is that, as discussed 
 before, the returned value will resolve on the NEXT turn of the event

@@ -1,14 +1,14 @@
 # Promises Workshop for Javascript!
 
-### Learn to wield promises like a master to write clean asyncronous code
+### Learn to wield promises like a master to write clean asynchronous code
 
 #### Uses the popular "Q" library as a default implementation of Promises/A+
 
 ## Mission
 
-Promises offer a very powerful abstraction for obtaining values asyncronously.  
+Promises offer a very powerful abstraction for obtaining values asynchronously.  
 As javascript is a async-first language it is important to understand the options
-you have for handling asyncronicity.  
+you have for handling asynchronicity.  
 
 You will learn the ins and outs of promises including error handling, value propagation,
 synchronous returns, and composition.
