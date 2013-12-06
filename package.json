@@ -1,6 +1,6 @@
 {
   "name": "promise-it-wont-hurt",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "This is a Workshop module for learning about promises in node.js",
   "main": "index.js",
   "scripts": {
