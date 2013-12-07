@@ -7,8 +7,8 @@ var user = {
 
 module.exports = function (run) {
   var server = http.createServer(function (req, res) {
-    res.write(JSON.stringify(user));
-    res.end();
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify(user));
   });
   
   server.listen(1337);
