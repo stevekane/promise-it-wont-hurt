@@ -8,5 +8,6 @@
   "using_qfcall",
   "an_important_rule",
   "multiple_promises",
-  "fetch_json"
+  "fetch_json",
+  "do_some_work"
 ]
