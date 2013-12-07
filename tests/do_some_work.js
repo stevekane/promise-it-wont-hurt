@@ -1,13 +1,11 @@
-var q = require('q')
-  , qhttp = require('q-io/http')
-  , _ = require('lodash')
-  , cachePath = "http://localhost:7000/"
-  , dbPath = "http://localhost:7001/";
+var qhttp = require('q-io/http');
 
-var buildDbPath = _.bind(String.prototype.concat, dbPath);
-
-qhttp.read(cachePath)
-.then(_.compose(qhttp.read, buildDbPath))
-.then(_.compose(console.log, JSON.parse))
+qhttp.read("http://localhost:7000/")
+.then(function (id) {
+  return qhttp.read("http://localhost:7001/" + id);
+})
+.then(function (json) {
+  console.log(JSON.parse(json));
+})
 .then(null, console.error)
 .done();

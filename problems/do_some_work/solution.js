@@ -1,5 +1,4 @@
-var q = require('q')
-  , qhttp = require('q-io/http');
+var qhttp = require('q-io/http');
 
 qhttp.read("http://localhost:7000/")
 .then(function (id) {
