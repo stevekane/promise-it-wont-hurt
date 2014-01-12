@@ -71,7 +71,7 @@ $ promise-it-wont-hurt verify mysolution.js
 
 ## Stuck?
 
-Feedback and critisism is welcome, please log your troubles in [issues](https://github.com/stevekane/promise-it-wont-hurt/issues). 
+Feedback and criticism is welcome, please log your troubles in [issues](https://github.com/stevekane/promise-it-wont-hurt/issues). 
 
 ## Screenshots
 ![Promise it won't hurt](https://raw.github.com/stevekane/promise-it-wont-hurt/master/promiseitwonthurt.png)
