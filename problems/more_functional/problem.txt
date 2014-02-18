@@ -4,7 +4,7 @@ Functional programming carries with it some stigmas that can scare many people
 away.  This is unfortunate because you can in fact write clear, elegant code 
 using a small subset of "functional programming".  
 
-The previous lesson is  an excellent candidate for additional functional refactoring.
+The previous lesson is an excellent candidate for additional functional refactoring.
 Here is the previous lesson's solution in case you don't have it:
 
 var q = require('q')
@@ -28,5 +28,5 @@ In particular, you may want to use _.bind, _.compose, or others as you see fit.
 
 The solution will work out of the box since the problem is the same as the previous.  
 Focus on reasoning about how to use function composition to make your promise chain
-as declarative as possible.  Refer to the provided solution once you have given it
+as declarative as possible. Refer to the provided solution once you have given it
 some thought and see if you can completely understand it.
