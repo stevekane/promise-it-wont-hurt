@@ -1,6 +1,6 @@
 {bold}Are promises always resolved asynchronously?{/bold}
 
-The Promises/A+ spec declares that promises MUST fire their resolution/rejection 
+The Promises/A+ spec declares that promises MUST NOT fire their resolution/rejection 
 function on the same turn of the event loop that they are created on.  This is 
 very important because it eliminates the possibility of execution order
 varying and resulting in indeterminate outcomes.
