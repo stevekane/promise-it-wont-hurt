@@ -64,7 +64,7 @@ of functions that ALL print to the console.
 2. Create a function "iterate" that prints the first argument 
    (an integer) to it and then returns that argument + 1;
 3. Create a promise chain that wraps your iterate method using Q's
-   fcall then a series of iterations that attempts to perform iterate
+   fcall (call iterate with 1) then a series of iterations that attempts to perform iterate
    10 times.  
 4. Attach console.log as a rejection handler at the bottom of your
    chain.
@@ -78,5 +78,6 @@ travel down the promise chain to the first available rejection handler.
 {bold}Bonus{/bold}
 
 Try swapping your rejection handler from console.log to throwMyGod.
-Your program will now throw an exception in the global context!  Ahh!
-Try to fix this using the approach described above.
+Your program will now swallow an error without doing anything!  Ahh!
+Try to fix this using the approach described above, so that your
+error is thrown in the global scope.
