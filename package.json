@@ -19,7 +19,7 @@
   "bin": "./promise.js",
   "preferGlobal": true,
   "dependencies": {
-    "workshopper": "~0.4.1",
+    "workshopper": "~0.5.0",
     "q": "~0.9.7",
     "q-io": "~1.10.6",
     "node-uuid": "~1.4.1",
