@@ -32,7 +32,9 @@ Use the popular "Q" library to create a promise.
 Pass console.log to the "then" method of your promise.
 
 Manually resolve that promise using setTimeout with a delay of 300ms and pass
-it a parameter of "RESOLVED!".
+it a parameter of "RESOLVED!". 
+(HINT: To pass a parameter to a callback with setTimeout review the 8th example here:
+http://www.w3schools.com/jsref/met_win_settimeout.asp)
 
 In Q, promises are created using Q.defer();
 
@@ -45,4 +47,12 @@ promise object itself you must return the "promise" attribute of the newly creat
   var defer = q.defer(); 
   //defer.promise is the actual promise itself
   //defer.promise.then is the "Q" way of attaching a then handler
-  //your solution here 
+
+  // *** Edit the two lines of code below to solve the task ***
+  
+  defer.promise.then(aFunctionToCallWhenThePromiseIsResolved)
+
+  //use def.resolve where you would usually use a callback function
+  
+  aFunctionThatTakesACallback(def.resolve)
+
