@@ -2,7 +2,6 @@
   "name": "promise-it-wont-hurt",
   "version": "0.1.1",
   "description": "This is a Workshop module for learning about promises in node.js",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +15,7 @@
   ],
   "author": "Steven Kane",
   "license": "BSD",
-  "bin": "./promise.js",
+  "bin": "./promiseitwonthurt.js",
   "preferGlobal": true,
   "dependencies": {
     "lodash": "~2.4.1",
