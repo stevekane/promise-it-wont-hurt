@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 
 const workshopper = require('workshopper')
-  , path = require('path');
+    , path        = require('path')
 
+function fpath (f) {
+  return path.join(__dirname, f)
+}
 
 workshopper({
-  name: "promise-it-wont-hurt",
-  title: "Promise It Won't Hurt",
-  subtitle: "Learn to use promises in Node and browsers",
-  appDir: __dirname,
-  menu: {
+    name        : 'promise-it-wont-hurt'
+  , appDir      : __dirname
+  , languages   : ['en', 'fr']
+  , helpFile    : fpath('./i18n/help/{lang}.txt')
+  , menu: {
     bg: "red",
     fg: "white"
-  },
-  helpFile: path.join(__dirname, "help.txt")
-}).init();
+  }
+})

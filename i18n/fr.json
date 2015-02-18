@@ -1,0 +1,18 @@
+{
+  "title": "Promets-moi Que Ça Ne Fera Pas Mal",
+  "subtitle": "Apprenez à utiliser les promesses dans Node et le navigateur",
+  "exercise": {
+    "fulfill_a_promise": "Accomplir une promesse",
+    "reject_a_promise": "Rejeter une promesse",
+    "to_reject_or_not_to_reject": "Rejeter ou ne pas rejeter",
+    "always_async": "Toujours asynchrone",
+    "values_and_promises": "Valeurs et promesses",
+    "throw_an_error": "Lever une erreur",
+    "using_qfcall": "Utiliser qfcall",
+    "an_important_rule": "Une règle importante",
+    "multiple_promises": "Promesses multiples",
+    "fetch_json": "Récupérer du JSON",
+    "do_some_work": "Faire plus de boulot",
+    "more_functional": "Une approche plus fonctionnelle"
+  }
+}
