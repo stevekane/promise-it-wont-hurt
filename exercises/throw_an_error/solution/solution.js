@@ -3,11 +3,11 @@ var q = require('q');
 function parsePromised (json) {
   var def = q.defer()
     , result;
-  
+
   try {
-    result = JSON.parse(json); 
+    result = JSON.parse(json);
   } catch (e) {
-    def.reject(e); 
+    def.reject(e);
   }
 
   def.resolve(result);
