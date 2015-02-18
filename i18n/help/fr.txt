@@ -1,0 +1,28 @@
+Bienvenue dans Promets-Moi Que Ça Ne Fera Pas Mal ! -- un atelier automatisé
+qui explique en détail comment fonctionnent les promesses, et comment s'en
+servir tant dans le navigateur que dans du JS côté serveur.
+
+Ce module est basé sur le module `workshopper` extrait à l’origine de
+`stream-adventure`.
+
+Ce module utilise lourdement le module `q`, que tu peux retrouver ici :
+
+  https://github.com/kriskowal/q
+
+Par ailleurs, au bout d’un moment les leçons utilisent le module `q-io`,
+que tu peux retrouver ici :
+
+  https://github.com/kriskowal/q-io
+
+Certains modules populaires de promesses sont listés ci-dessous :
+
+  https://github.com/petkaantonov/bluebird
+  https://github.com/tildeio/rsvp.js
+
+Des soucis ?  Des suggestions ?  Des retours à nous faire ?
+
+  https://github.com/stevekane/promise-it-wont-hurt/issues
+
+Tu peux trouver d’autres ateliers géniaux sur :
+
+  http://nodeschool.io
