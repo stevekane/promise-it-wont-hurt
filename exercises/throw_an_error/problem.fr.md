@@ -35,8 +35,8 @@ Allez, on se fait exactement ce dont on vient de parler.
 On va vous transmettre du JSON invlide dans `process.argv[2]`.
 
 1. Écrivez une fonction appelée `parsePromised` qui crée une promesse,
-   fait un `JSON.parse` là-dessus au sein d’un bloc `try`/`catch`, et
-   accomplit ou rejette la promesse selon qu’il y a une erreur levée ou non.
-   **Note :** votre fonction devrait renvoyer la promesse de façon synchrone !
+    fait un `JSON.parse` là-dessus au sein d’un bloc `try`/`catch`, et
+    accomplit ou rejette la promesse selon qu’il y a une erreur levée ou non.
+    **Note :** votre fonction devrait renvoyer la promesse de façon synchrone !
 2. Construisez une séquence d’étapes comme celle ci-dessus, qui capture toute
-   erreur levée et la logue dans la console.
+    erreur levée et la logue dans la console.

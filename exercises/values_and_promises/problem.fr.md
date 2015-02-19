@@ -42,9 +42,9 @@ dans des promesses, ce qui permet du chaînage supplémentaire.
 
 1. Construisez une promesse à l’aide u `defer()` de Q.
 2. Construisez une fonction `attachTitle` qui préfixe son premier argument
-   avec le texte `"DR. "` et renvoie le résultat.
+    avec le texte `"DR. "` et renvoie le résultat.
 3. Construisez une chaîne de promesses à partir de celle créée initialement, qui
-   appellerait d’abord `attachTitle` puis `console.log`.
+    appellerait d’abord `attachTitle` puis `console.log`.
 4. Accomplissez la promesse de base avec la valeur `"MANHATTAN"`.
 
 Si votre programme est correct, il devrait afficher « DR. MANHATTAN », ce qui

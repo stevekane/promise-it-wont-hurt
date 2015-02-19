@@ -38,7 +38,7 @@ ultérieure sera simplement ignorée.
 
 1. Créez une promesse avec `Q.defer()`
 2. Passez `console.log` comme premier **et** second argument à la méthode
-   `then` de votre promesse
+    `then` de votre promesse
 3. Accomplissez la promesse avec une valeur de `"J'AI ETE APPELEE"`
 4. Rejetez la promesse avec une valeur de `"MOI PAS"`
 
