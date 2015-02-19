@@ -30,20 +30,20 @@ getAll([fetch(1), fetch(2)])
 
 Let's build this function!
 
-1. Construct two promises using Q's `defer()`
-2. Construct a function `all` that accepts two promises as arguments.
-   * Your function should create an internal promise using Q's `defer()` and
-     return it!
-   * Your function should create a `counter` variable with initial value of 0.
-   * Your function should attach `then` fulfillment handlers to both
-     promises which increment an internal counter and fulfill the function's
-     internal promise with an array containing **both** values **if** the counter
-     reaches 2.
-   * You should **also** attach rejection handlers to both promises which both
-     reject the internal promise!
-3. Pass your two promises into your new function and then attach `console.log` as
+1) Construct two promises using Q's `defer()`
+2) Construct a function `all` that accepts two promises as arguments.
+   Your function should:
+
+   a) Create an internal promise using Q's `defer()` and return it!
+   b) Create a `counter` variable with initial value of 0.
+   c) Attach `then` fulfillment handlers to both promises which increment an internal counter
+   d) **if** the counter reaches 2, fulfill the internal promise with an array
+      containing **both** values.
+   e) **Also** attach rejection handlers to both promises which both reject the internal promise!
+
+3) Pass your two promises into your new function and then attach `console.log` as
    a fulfillment handler to the promise returned by your function.
-4. Attach a function to `setTimeout` that resolves both of the promises you created
+4) Attach a function to `setTimeout` that resolves both of the promises you created
    and passed to your function with the values `"PROMISES"` and `"FTW"`, respectively.
    Set the timeout delay to 200ms.
 
