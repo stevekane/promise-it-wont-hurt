@@ -21,9 +21,8 @@ one promise...
    will be returned to you representing a user id.
 2. Grab that id from the session response and send an HTTP GET request to 
    your database on port 7001 to the url "localhost:7001/<id>".
-3. If successfully done, your database will return a user object.  console.log 
+3. If successfully done, your database will return a user object as JSON.  console.log 
    it to win many nerd-points.
 
 {bold}Hint{/bold}
-Don't forget that q-io's read method returns a buffer.  You will need to convert
-it to a string and JSON.parse it to complete this lesson!
+You'll need to convert the resulting/final JSON to a string to get all of teh nerdz points.
