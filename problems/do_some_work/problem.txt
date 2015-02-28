@@ -24,6 +24,3 @@ one promise...
 3. If successfully done, your database will return a user object.  console.log 
    it to win many nerd-points.
 
-{bold}Hint{/bold}
-Don't forget that q-io's read method returns a buffer.  You will need to convert
-it to a string and JSON.parse it to complete this lesson!
