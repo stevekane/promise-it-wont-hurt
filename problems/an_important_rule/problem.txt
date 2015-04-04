@@ -10,19 +10,19 @@ other.  If any expression throws an exception, ALL SUBSEQUENT
 EXPRESSIONS WILL NOT BE EXECUTED and the catch block
 will catch and handle it.
 
-try {
-  doStuff()
-  doMoreStuff()
-} catch (err) {
-  complainAboutJavascript(err);
-}
+  try {
+    doStuff()
+    doMoreStuff()
+  } catch (err) {
+    complainAboutJavascript(err);
+  }
 
 With promises, we can achieve a very similar control flow as shown 
 (assume all functions return promises) :
 
-doStuff()
-.then(doMoreStuff)
-.then(null, complainAboutJavascript);
+  doStuff()
+    .then(doMoreStuff)
+    .then(null, complainAboutJavascript);
 
 Maybe we should combine the last two lines since one is a fulfill
 handler and the other is a rejection handler?  NO!  While this
@@ -49,10 +49,10 @@ then attach a "done" handler to guard against uncaught exceptions".
 
 An example is shown below:
 
-doStuff()
-.then(doMoreStuff)
-.then(null, complainAboutJavascript)
-.done();
+  doStuff()
+    .then(doMoreStuff)
+    .then(null, complainAboutJavascript)
+    .done();
 
 {bold}Task{/bold}
 

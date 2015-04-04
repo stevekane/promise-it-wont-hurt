@@ -8,19 +8,19 @@ async operations have completed.
 In synchronous code this is trivial because our operations
 are executed in the order they are specified:
 
-var thingOne = getThing(1);
-var thingTwo = getThing(2);
+  var thingOne = getThing(1);
+  var thingTwo = getThing(2);
 
-combine(thingOne, thingTwo);
+  combine(thingOne, thingTwo);
 
 We would like to build a function such that we can specify a list
 of asynchronous values we would like to fetch and then use once all
 are available.
 
-getAll([fetch(1), fetch(2)])
-.then(function (first, second) {
-  console.log(first, second);
-});
+  getAll(fetch(1), fetch(2))
+    .then(function (data) {
+      console.log(data[0], data[1]);
+    });
 
 {bold}Task{/bold}
 
