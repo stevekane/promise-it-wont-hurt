@@ -11,7 +11,7 @@ If a promise is rejected then any "failure functions" registered
 with the "then" method will be called with the Error as argument.
 
 For now, do not be concerned with exactly HOW this works or what the syntax is.
-We are about to dive into that in detail
+We are about to dive into that in detail.
 
 {bold}Setup{/bold}
 
