@@ -7,18 +7,18 @@ using a small subset of "functional programming".
 The previous lesson is an excellent candidate for additional functional refactoring.
 Here is the previous lesson's solution in case you don't have it:
 
-var q = require('q')
-  , qhttp = require('q-io/http');
+  var q = require('q')
+    , qhttp = require('q-io/http');
 
-qhttp.read("http://localhost:7000/")
-.then(function (id) {
-  return qhttp.read("http://localhost:7001/" + id);
-})
-.then(function (json) {
-  console.log(JSON.parse(json));
-})
-.then(null, console.error)
-.done();
+  qhttp.read("http://localhost:7000/")
+    .then(function (id) {
+      return qhttp.read("http://localhost:7001/" + id);
+    })
+    .then(function (json) {
+      console.log(JSON.parse(json));
+    })
+    .then(null, console.error)
+    .done();
 
 Let's refactor this function using the popular "lodash" library.  Install it with:
 

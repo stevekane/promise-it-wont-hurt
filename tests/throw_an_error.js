@@ -12,7 +12,7 @@ function parsePromised (json) {
 
   def.resolve(result);
   return def.promise;
-};
+}
 
 parsePromised(process.argv[2])
 .then(null, console.log)

@@ -18,9 +18,9 @@ writing a script that does the following:
 *3. Resolve the promise with a parameter "SECOND"
 4. Print "FIRST" to the console using console.log
 
-*Do this synchronsouly and NOT in a setTimeout as was the case in previous lessons
+*Do this synchronously and NOT in a setTimeout as was the case in previous lessons
 
 Your script will pass and show you that despite the promise being resolved synchronously,
 the provided function is not executed until the next turn of the event loop.
 
-Thus, you should see "FIRST", "SECOND"
+Thus, you should see "FIRST", "SECOND".

@@ -14,7 +14,7 @@ method which returns a promise for the value of a successful HTTP response body.
 
 Install by typing
 
-npm install q-io
+  npm install q-io
 
 {bold}Task{/bold}
 

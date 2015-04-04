@@ -13,14 +13,14 @@ an ajax request to your remote server to fetch it.
 Wrapping this functionality in a promise means that both behaviors
 can be consumed under a single abstraction: 
 
-doSomeSetup()
-.then(function () {
-  return cache.fetchModel(id) 
-    ? cache.fetchModel(id)
-    : promisedAjax("users/" + id);
-})
-.then(displayUser)
-.then(null, handleError);
+  doSomeSetup()
+    .then(function () {
+      return cache.fetchModel(id)
+        ? cache.fetchModel(id)
+        : promisedAjax("users/" + id);
+    })
+    .then(displayUser)
+    .then(null, handleError);
 
 The key thing to understand here is that your handlers will WRAP
 your return values in promises even if they are obtained synchronously.
