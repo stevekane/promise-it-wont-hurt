@@ -1,6 +1,17 @@
 {
   "title": "Promise It Won't Hurt",
   "subtitle": "Learn to use promises in Node and browsers",
-  "exercises": {
+  "exercise": {
+    "fulfill_a_promise": "Fulfill a promise",
+    "reject_a_promise": "Reject a promise",
+    "to_reject_or_not_to_reject": "To reject or not to reject",
+    "always_async": "Always asynchronous",
+    "values_and_promises": "Values and promises",
+    "throw_an_error": "Throw an error",
+    "using_qfcall": "Using qfcall",
+    "an_important_rule": "An important rule",
+    "multiple_promises": "Multiple promises",
+    "fetch_json": "Fetch JSON",
+    "do_some_work": "Do some work"
   }
 }
