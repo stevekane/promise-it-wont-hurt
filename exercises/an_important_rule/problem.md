@@ -45,7 +45,7 @@ code have the same problem.  If the rejection handler itself throws
 an error you are going to have a bad time.
 
 Many promise libraries try to ameliorate this problem for you
-by providing a `done` handler that simple handles any uncaught
+by providing a `done` handler that simply handles any uncaught
 errors.  The rule of thumb is this:
 
 > If you are **not** returning a value from your promise to a caller,
