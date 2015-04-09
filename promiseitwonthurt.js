@@ -3,9 +3,7 @@
 const workshopper = require('workshopper')
     , path        = require('path')
 
-function fpath (f) {
-  return path.join(__dirname, f)
-}
+fpath = path.join.bind(null, __dirname)
 
 workshopper({
     name        : 'promise-it-wont-hurt'
