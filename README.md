@@ -39,7 +39,7 @@ Please regularly rerun the above command to get the latest set of exercises.
 ### 2. Docker
 
 ```
-alias promise-it-wont-hurt='docker run -it -v $(pwd):/root stevekane/promise-it-wont-hurt'
+alias promise-it-wont-hurt='docker run -it -v $(pwd):/root oreng/promises-workshop'
 
 promise-it-wont-hurt                        # show menu
 promise-it-wont-hurt run mysolution.js      # run your solution
