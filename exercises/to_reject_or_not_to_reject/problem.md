@@ -10,7 +10,7 @@ Callback-style code usually requires a callback function to be invoked
 somewhere in the body of the function that it was passed to.  Many, if not
 most times, that function is intended to be called only once.  However, through
 errors in logic, problems with syntax, or other simple mistakes it is
-possible to call your callback multiple times and create vexxing states in your
+possible to call your callback multiple times and create vexing states in your
 app or insidious bugs.
 
 ```js
