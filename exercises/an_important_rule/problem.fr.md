@@ -72,7 +72,7 @@ doStuff()
 Nous allons visualiser ce comportement nous-mêmes en créant une chaîne
 de fonctions qui affichent **toutes** dans la console.
 
-1. Écrivez une fonction `throwMyGod` qui lève une `Error` avec le texte
+1. Écrivez une fonction `alwaysThrows` qui lève une `Error` avec le texte
     « OH NOES » ;
 2. Écrivez une fonction `iterate` qui affiche son premier argument (un
     nombre entier) et le renvoie augmenté de 1 ;
@@ -80,7 +80,7 @@ de fonctions qui affichent **toutes** dans la console.
     à l’aide du `fcall` de Q, puis fait une série d’étapes pour tenter
     d’appeler `iterate` un total de 10 fois ;
 4. Ajoutez un `console.log` comme gestionnaire de rejet en fin de chaîne ;
-5. Insérez un appel à `throwMyGod` après le 5e appel à `iterate`.
+5. Insérez un appel à `alwaysThrows` après le 5e appel à `iterate`.
 
 Si vous avez fait tout ça correctement, votre code devrait afficher
 1, 2, 3, 4, 5, "[Error: OH NOES]".  Remarquez comme l’exception levée a
@@ -90,6 +90,6 @@ de la chaîne de promesse jusqu’au premier gestionnaire de rejet disponible.
 ## Bonus
 
 Essayez de remplacer votre gestionnaire de rejet `console.log` par
-`throwMyGod`.  Votre programme va maintenant faire péter une exception dans
+`alwaysThrows`.  Votre programme va maintenant faire péter une exception dans
 le contexte global.  Argh !  Essayez de corriger ça en utilisant l’approche
 décrite plus haut.

@@ -5,7 +5,7 @@ function iterate (num) {
   return ++num;
 };
 
-function throwMyGod () {
+function alwaysThrows () {
   throw new Error("OH NOES");
 };
 
@@ -14,7 +14,7 @@ q.fcall(iterate, 1)
 .then(iterate)
 .then(iterate)
 .then(iterate)
-.then(throwMyGod)
+.then(alwaysThrows)
 .then(iterate)
 .then(iterate)
 .then(iterate)
