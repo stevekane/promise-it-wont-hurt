@@ -18,9 +18,7 @@ cas de figure peuvent être exploités au moyen d’une unique abstraction :
 ```js
 doSomeSetup()
 .then(function () {
-  return cache.fetchModel(id)
-    ? cache.fetchModel(id)
-    : promisedAjax("users/" + id);
+  return cache.fetchModel(id) || promisedAjax("users/" + id);
 })
 .then(displayUser)
 .then(null, handleError);
