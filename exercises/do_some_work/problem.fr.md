@@ -24,9 +24,3 @@ sans doute besoin de plus d’une promesse…
     le port 7001, avec comme URL `localhost:7001/<id>` (sans les chevrons).
 3. Si ça fonctionne, votre base de données vous renverra un objet utilisateur.
    Affichez-le avec `console.log` pour gagner des points de geekitude.
-
-## Conseil
-
-N’oubliez pas que le `http.read()` de `q-io` renvoie un `Buffer`.  Vous aurez
-besoin de le convertir en `String` et de faire un `JSON.parse()` sur le
-résultat pour faire aboutir cette leçon !

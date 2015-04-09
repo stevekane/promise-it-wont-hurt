@@ -23,9 +23,3 @@ than one promise…
    your database on port 7001 to the url `localhost:7001/<id>`.
 3. If successfully done, your database will return a user object.
    `console.log` it to win many nerd-points.
-
-## Hint
-
-Don't forget that `q-io`'s `http.read` method returns a `Buffer`.
-You will need to convert it to a `String` and `JSON.parse` it to complete
-this lesson!
