@@ -4,6 +4,8 @@
 
 #### Uses the popular "Q" library as a default implementation of Promises/A+
 
+[![Dependency Status](https://img.shields.io/david/stevekane/promise-it-wont-hurt.svg)](https://david-dm.org/stevekane/promise-it-wont-hurt#info=dependencies)
+
 ## Mission
 
 Promises offer a very powerful abstraction for obtaining values asynchronously.  
