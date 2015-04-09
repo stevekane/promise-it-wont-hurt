@@ -14,6 +14,10 @@
     "promises"
   ],
   "author": "Steven Kane",
+  "contributors": [
+    "Christophe Porteneuve <tdd@tddsworld.com>",
+    "Timothy Gu <timothygu99@gmail.com>"
+  ],
   "license": "BSD",
   "bin": "./promiseitwonthurt.js",
   "preferGlobal": true,
