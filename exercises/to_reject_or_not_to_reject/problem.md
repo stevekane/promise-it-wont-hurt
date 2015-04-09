@@ -15,13 +15,13 @@ app or insidious bugs.
 
 ```js
 /*
-this code is bad, but nonetheless common and has the nasty result of calling
-the supplied callback more than once (possibly destroying the earth?)
-it is conventional to return the first invocation of callback but it's
-easy to overlook!
+  this code is bad, but nonetheless common and has the nasty result of calling
+  the supplied callback more than once (possibly destroying the earth?)
+  it is conventional to return the first invocation of callback but it's
+  easy to overlook!
 */
 
-var function (user, callback) {
+function (user, callback) {
   if (user) {
     callback(null, user);
   }
