@@ -1,4 +1,4 @@
-# Promises Workshop for Javascript!
+l# Promises Workshop for Javascript!
 
 ### Learn to wield promises like a master to write clean asynchronous code
 
@@ -19,6 +19,10 @@ and error handling.
 
 ## Installation & Update
 
+There are two ways to run the workshop:
+
+### 1. NPM
+
 Create a new directory to do your workshop work in.  Let's call it "promise-shop".
 You will need to initialize npm in this repo and then use npm to install "q".
 
@@ -31,6 +35,18 @@ $ npm install -g promise-it-wont-hurt@latest
 
 **Note**: the workshop is being updated weekly. 
 Please regularly rerun the above command to get the latest set of exercises.
+
+### 2. Docker
+
+```
+alias workshop='docker run -it -v $(pwd):/root oreng/promises-workshop'
+
+workshop                        # show menu
+workshop run mysolution.js      # run your solution
+workshop verify mysolution.js   # verify your solution
+```
+
+The workshop stores your progress in .config so `sudo rm -r .config` will reset the workshop.
 
 ## Usage Instructions
 
