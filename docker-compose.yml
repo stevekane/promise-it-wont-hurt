@@ -1,0 +1,4 @@
+workshop:
+  build: .
+  volumes:
+    - .:/root
