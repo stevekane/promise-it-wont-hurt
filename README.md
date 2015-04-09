@@ -2,7 +2,7 @@
 
 ### Learn to wield promises like a master to write clean asynchronous code
 
-#### Uses the popular "Q" library as a default implementation of Promises/A+
+#### Uses ECMAScript 6 Promises
 
 ## Mission
 
@@ -13,7 +13,7 @@ you have for handling asynchronicity.
 You will learn the ins and outs of promises including error handling, value propagation,
 synchronous returns, and composition.
 
-By the end of the workshop you will be comfortable using Q to work with promises
+By the end of the workshop you will be comfortable using ES6 promises
 AND writing your own functions that leverage promises to provide clean abstractions
 and error handling.
 
@@ -24,12 +24,11 @@ There are two ways to run the workshop:
 ### 1. NPM
 
 Create a new directory to do your workshop work in.  Let's call it "promise-shop".
-You will need to initialize npm in this repo and then use npm to install "q".
+You will need to initialize npm in this repo.
 
 ```
 $ mkdir promise-shop && cd promise-shop
 $ npm init
-$ npm install q
 $ npm install -g promise-it-wont-hurt@latest
 ```
 
