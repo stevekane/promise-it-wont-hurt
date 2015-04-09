@@ -1,13 +1,15 @@
-# Promises Workshop for Javascript!
+# Promises Workshop for JavaScript!
 
 ### Learn to wield promises like a master to write clean asynchronous code
 
 #### Uses ECMAScript 6 Promises
 
+[![Dependency Status](https://img.shields.io/david/stevekane/promise-it-wont-hurt.svg)](https://david-dm.org/stevekane/promise-it-wont-hurt#info=dependencies)
+
 ## Mission
 
 Promises offer a very powerful abstraction for obtaining values asynchronously.  
-As javascript is a async-first language it is important to understand the options
+As JavaScript is a async-first language it is important to understand the options
 you have for handling asynchronicity.  
 
 You will learn the ins and outs of promises including error handling, value propagation,

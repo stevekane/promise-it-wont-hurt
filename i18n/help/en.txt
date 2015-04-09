@@ -1,5 +1,5 @@
 Welcome to Promise it won't hurt! -- an automated workshop explaining how 
-to use promises effectively in both browser and serverside javascript.
+to use promises effectively in both browser- and server-side JavaScript.
 
 This module is built on the workshopper module originally extracted from 
 stream-adventure.
