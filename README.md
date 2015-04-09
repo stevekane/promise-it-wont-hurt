@@ -76,8 +76,6 @@ Feedback and criticism is welcome, please log your troubles in [issues](https://
 ## Screenshots
 ![Promise it won't hurt](https://raw.github.com/stevekane/promise-it-wont-hurt/master/promiseitwonthurt.png)
 
-## Resources
-
 ## Thanks rvagg
 
 This tutorial was built using rvagg's [workshopper](https://github.com/rvagg/workshopper) framework.
