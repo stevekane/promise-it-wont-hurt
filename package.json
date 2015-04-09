@@ -22,6 +22,7 @@
   "bin": "./promiseitwonthurt.js",
   "preferGlobal": true,
   "dependencies": {
+    "es6-promise": "^2.0.1",
     "node-uuid": "~1.4.1",
     "workshopper": "^2.3.1",
     "workshopper-exercise": "^2.3.0"

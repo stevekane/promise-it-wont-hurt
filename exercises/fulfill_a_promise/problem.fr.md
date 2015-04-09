@@ -1,3 +1,5 @@
+# THIS NEEDS UPDATE!
+
 # Qu’est-ce qu’une promesse ?
 
 Une promesse est un objet qui définit une méthode appelée `then`.
@@ -40,7 +42,7 @@ Utilisez la bibliothèque populaire `q` pour créer une promesse.
 Passez `console.log` à la méthode `then` de votre promesse.
 
 Accomplissez la promesse manuellement au sein d’un `setTimeout` avec
-un délai de 300ms, en lui passant le paramètre `"RESOLU !"`.
+un délai de 300ms, en lui passant le paramètre `"RESOLU!"`.
 
 Dans Q, les promesses se créent à l’aide de `Q.defer()`.
 

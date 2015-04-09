@@ -16,43 +16,65 @@ the syntax is.  We are about to dive into that in detail.
 
 ## Setup
 
-To do many of the lessons in this workshop, you will need to install
-the `q` module.  To do this, type the following in your project's
-directory:
+To do many of the lessons in this workshop, you will need an installation of
+Node.js that supports ECMAScript 6 promises. That includes Node.js 0.12 or
+higher, and all versions of io.js.
 
-```sh
-$ npm install q --save
-```
-
-This will install a local copy of the `q` module into your directory
-which you can import into the file you have written using:
+To find out if your Node.js installation has native promise support, execute
+the following in a Node.js REPL:
 
 ```js
-var q = require('q');
+typeof Promise !== "undefined"
 ```
+
+If the REPL returns "true", then you are good to go! If not, you’ll have to use
+one of the many shims people have implemented. For this tutorial, we recommend
+`es6-promise` which aims to be strictly compliant to ES6 without any extra
+features. To use `es6-promise`, execute the following in a shell:
+
+```sh
+npm install es6-promise
+```
+
+Then, at the beginning of every file in this tutorial, add:
+
+```js
+var Promise = require('es6-promise').Promise
+```
+
+Now you can use ES6 promises!
 
 ## Task
 
-Use the popular `q` library to create a promise.
+Create a promise using ES6 promise.
 
 Pass `console.log` to the `then` method of your promise.
 
-Manually resolve that promise using `setTimeout` with a delay of 300ms
+Manually fulfill that promise using `setTimeout` with a delay of 300ms
 and pass it a parameter of `"RESOLVED!"`.
 
-In Q, promises are created using `Q.defer()`.
+## Hint
 
-The *deferred* that is created is not exactly the promise, and in order
-to return the actual promise object itself you must return the `promise`
-attribute of the newly created *deferred*.
+A promise is created with `new Promise(cb)`, in which `cb` is a callback with
+the signature `function (fulfill, reject)`, where `fulfill` and `reject` are
+two other callbacks called from `cb` to indicate the outcome of the operation.
+For promises, fulfilling (also called resolving) means that the operation
+successfully completes and yields a value, and the value is passed to the
+`fulfill` function as the first argument.
+
+As already mentioned above, a promise has a `then` property function. It takes
+two optional callbacks, the first to be called when the promise is fulfilled
+and a second when the promise is rejected. For now, let’s focus on the first
+one. The callback is called with the same value the promise passed to
+`fulfill`, and that allows you to operate upon the value resolved by the
+promise.
 
 ## Boilerplate
 
 ```js
-var q = require('q');
-var defer = q.defer();
-// defer.promise is the actual promise itself
-// defer.promise.then is the "Q" way of attaching a then handler
+var promise = new Promise(function (fulfill, reject) {
+  // Your solution here
+})
 
-// your solution here
+// Your solution here
 ```
