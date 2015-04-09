@@ -1,4 +1,4 @@
-l# Promises Workshop for Javascript!
+# Promises Workshop for Javascript!
 
 ### Learn to wield promises like a master to write clean asynchronous code
 
