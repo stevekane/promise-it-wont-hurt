@@ -46,7 +46,7 @@ workshop run mysolution.js      # run your solution
 workshop verify mysolution.js   # verify your solution
 ```
 
-The workshop stores your progress in .config so `sudo rm -r .config` will reset the workshop.
+The workshop stores your progress in .config so `sudo rm -r .config` will reset the workshop. The git repo for the Docker image is [here](https://github.com/oren/promises-workshop). PRs are welcome!
 
 ## Usage Instructions
 
