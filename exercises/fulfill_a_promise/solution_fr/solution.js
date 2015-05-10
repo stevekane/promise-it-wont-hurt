@@ -1,26 +1,28 @@
-// Promise shimming. This detects if native Promise is available, and if not
-// fall back onto `es6-promise`.
+// Émulation de `Promise` si nécessaire.  On détecte si le type
+// `Promise` est disponible nativement, sinon on recourt à
+// l’émulation par `es6-promise`.
 var Promise = typeof Promise === 'undefined'
             ? require('es6-promise').Promise
             : Promise
 
-// Creates a promise
+// Crée la promesse
 var promise = new Promise(function (fulfill, reject) {
-  // After the timeout reaches 300ms, fulfill the promise with value
-  // "RESOLU!".
-  setTimeout(fulfill, 300, 'RESOLU!')
+  // Une fois atteint le timeout de 300ms, on accomplit la
+  // promesse avec la valeur « RESOLU ! ».
+  setTimeout(fulfill, 300, 'RESOLU !')
 
-  // The following is equivalent to above:
+  // Le code ci-dessus est équivalent à celui-ci :
   //
   // ```
   // setTimeout(function () {
-  //   fulfill('RESOLU!')
+  //   fulfill('RESOLU !')
   // }, 300)
   // ```
 })
 
-// Add a handler to the promise's fulfillment. `console.log` will be called
-// with the value passed to `fulfill`, which is `RESOLU!`.
-// Note that this statement will ALWAYS be executed before `fulfill` is
-// called (we'll talk about this in detail in the challenges to come).
+// Ajout d’un gestionnaire pour l’accomplissement de la promesse.
+// `console.log` sera appelée avec la valeur passée à `fulfill`, à
+// savoir « RESOLU ! ».  Remarquez que cette instruction sera
+// TOUJOURS appelée avec que `fulfill` soit appelée (nous y reviendrons
+// dans les défis qui suivront).
 promise.then(console.log)

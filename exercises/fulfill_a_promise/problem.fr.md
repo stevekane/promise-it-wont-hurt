@@ -1,5 +1,3 @@
-# THIS NEEDS UPDATE!
-
 # Qu’est-ce qu’une promesse ?
 
 Une promesse est un objet qui définit une méthode appelée `then`.
@@ -19,45 +17,50 @@ en détail au fil des exercices.
 
 ## Mise en place
 
-Pour la plupart des leçons de cet atelier, nous allons utiliser le
-module tiers `q`.  Pour l‘installer, tapez ce qui suit dans le répertoire
-de votre projet :
+Pour la plupart des leçons de cet atelier, vous aurez besoin d’une version de Node.js qui prenne en charge les promesses de ECMAScript 6.  Il s’agit de Node.js 0.12 ou supérieur, et de toutes les versions de io.js.
 
-```sh
-$ npm install q --save
-```
-
-Cette commande va installer une copie locale du module `q` dans votre
-dossier, que vous pourrez ensuite importer dans vos fichiers sources
-en écrivant :
+Pour déterminer si votre version de Node.js prend nativement en charge les promesses, exécutez le test suivant dans une REPL Node.js :
 
 ```js
-var q = require('q');
+typeof Promise !== "undefined"
 ```
+
+Si la REPL vous indique `true`, alors vous êtes paré-e !  Dans le cas contraire, vous devrez utiliser un des nombreux *shims* (émulations) implémentés par la communauté.  Pour cet atelier, nous recommandons `es6-promise`, qui vise à être strictement conforme à ES6 sans rien ajouter par-dessus.  Pour utiliser `es6-promise`, exécutez la commande suivante dans un terminal, de préférence dans le dossier de votre atelier :
+
+```sh
+npm install es6-promise
+```
+
+Puis, au début de chaque programme que vous écrirez pour cet atelier, ajoutez :
+
+```js
+var Promise = require('es6-promise').Promise
+```
+
+Et voilà, vous pouvez utiliser les promesses ES6 !
 
 ## Tâche
 
-Utilisez la bibliothèque populaire `q` pour créer une promesse.
+Créez une promesse ES6.
 
 Passez `console.log` à la méthode `then` de votre promesse.
 
-Accomplissez la promesse manuellement au sein d’un `setTimeout` avec
-un délai de 300ms, en lui passant le paramètre `"RESOLU!"`.
+Accomplissez la promesse manuellement au sein d’un `setTimeout` avec un délai de 300ms, en lui passant le paramètre `"RESOLU !"`.
 
-Dans Q, les promesses se créent à l’aide de `Q.defer()`.
+## Conseils
 
-Le *deferred* qui est ainsi créé n’est pas la promesse à proprement parler,
-et pour obtenir la véritable promesse il vous faudra utiliser la propriété
-`promise` du *deferred* fraîchement créé.  Par ailleurs, Q nomme à tort
-l’accomplissement `resolve()` au lieu de `fulfill()`.
+On crée une promesse avec `new Promise(cb)`, dans laquelle `cb` est une fonction de rappel avec la signature `function(fulfill, reject)`.  Selon que la promesse s’accomplira ou rejettera, vous appelerez depuis le code de la fonction de rappel soit `fulfill` soit `reject`.
+
+On dit qu’une promesse s’accomplit (on parle parfois de résolution) lorsqu’elle réussit à produire une valeur résultat, laquelle est alors passée en argument à `fulfill`.
+
+Comme indiqué plus haut, une promesse a une méthode `then`.  Celle-ci accepte deux fonctions de rappel optionnelles en arguments, la première en cas d’accomplissement, la seconde en cas de rejet.  Pour le moment, concentrons-nous sur la première.  Elle sera appelée avec la même valeur que celle que vous aurez passée à `fulfill`, ce qui nous permet de traiter la valeur d’accomplissement d’une promesse.
 
 ## Base de travail
 
 ```js
-var q = require('q');
-var defer = q.defer();
-// defer.promise est la promesse à proprement parler
-// defer.promise.then est la façon "Q" d’ajouter un gestionnaire de traitement
+var promise = new Promise(function(fulfill, reject) {
+  // Votre solution ici…
+});
 
-// Votre solution ici
+// …et ici
 ```

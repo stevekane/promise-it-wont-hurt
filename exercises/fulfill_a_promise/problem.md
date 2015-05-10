@@ -30,7 +30,7 @@ typeof Promise !== "undefined"
 If the REPL returns "true", then you are good to go! If not, you’ll have to use
 one of the many shims people have implemented. For this tutorial, we recommend
 `es6-promise` which aims to be strictly compliant to ES6 without any extra
-features. To use `es6-promise`, execute the following in a shell:
+features. To use `es6-promise`, execute the following in a shell, preferably in the directory you’ll write your programs in:
 
 ```sh
 npm install es6-promise

@@ -19,7 +19,7 @@ by writing a script that does the following:
 3. Resolve the promise with a parameter `"SECOND"`
 4. Print `"FIRST"` to the console using `console.log`
 
-Do this synchronsouly and **not** in a `setTimeout` as was the case in
+Do this synchronously and **not** in a `setTimeout` as was the case in
 previous lessons.
 
 Your script will pass and show you that despite the promise being resolved synchronously, the provided function is not executed until the next turn
