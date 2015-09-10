@@ -1,17 +1,17 @@
-var q = require('q');
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
 function parsePromised (json) {
-  var def = q.defer()
-    , result;
+  var result;
 
   try {
     result = JSON.parse(json);
   } catch (e) {
-    def.reject(e);
+    return Promise.reject(e);
   }
 
-  def.resolve(result);
-  return def.promise;
+  return Promise.resolve(result);
 };
 
 parsePromised(process.argv[2])
