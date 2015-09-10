@@ -11,8 +11,6 @@ ni accompli ni rejeté).
 
 ## Tâche
 
-Utilisez `q` pour créer une promesse.
-
 Créez une fonction qui affiche `error.message` à l’aide de `console.log`. Passez
 cette fonction comme gestionnaire de rejet à la méthode `then` de votre promesse
 (2e argument).

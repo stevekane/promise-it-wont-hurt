@@ -9,8 +9,6 @@ ever leaving either the resolved or rejected states.
 
 ## Task
 
-Use `q` again to create a promise.
-
 Create a function to print `error.message` using `console.log`.  Pass this
 function as a rejection handler to the `then` method of your promise.
 

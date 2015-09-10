@@ -1,9 +1,14 @@
-var q = require('q');
-var def = q.defer();
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
 function printError (err) {
-  console.log(err.message);
+  console.log(err.message); 
 }
 
-def.promise.then(null, printError);
-setTimeout(def.reject, 300, new Error("REJETE !"));
+var promise = new Promise(function (fulfill, reject) {
+	setTImeout(reject, 300, new Error("REJETE"));
+};
+
+promise.then(null, printError);
+
