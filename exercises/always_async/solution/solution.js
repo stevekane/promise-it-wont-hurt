@@ -1,6 +1,10 @@
-var q = require('q')
-  , deferred = q.defer();
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
-deferred.promise.then(console.log);
-deferred.resolve("SECOND");
-console.log("FIRST");
+var promise = new Promise(function (fulfill, reject) {
+    fulfill("SECOND");
+    console.log("FIRST");
+});
+
+promise.then(console.log);
