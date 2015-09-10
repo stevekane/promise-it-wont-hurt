@@ -9,16 +9,6 @@ never both.  Promises may fulfill or reject, never both.
 
 So wow.  Much similarity.  Very promising…
 
-Let's use a new module called `q-io` to take advantage of its `http.read`
-method which returns a promise for the value of a successful HTTP response
-body.
-
-Install by typing:
-
-```sh
-$ npm install q-io --save
-```
-
 ## Task
 
 Fetch JSON from *http://localhost:1337* and `console.log` it.
@@ -30,7 +20,4 @@ There are several things you will want to know:
 2. Parse the returned JSON and `console.log` it for much win.
 
 This challenge is a bit tricky but the implementation is relatively
-straightforward.  If you get stuck, refer to the `q-io` documentation for
-clarification:
-
-  https://github.com/kriskowal/q-io
+straightforward.

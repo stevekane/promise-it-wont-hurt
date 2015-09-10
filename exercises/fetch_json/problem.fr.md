@@ -10,16 +10,6 @@ mais jamais les deux.
 
 Waouh.  Si proches.  Très prometteur…
 
-Nous allons utiliser un module appelé `q-io` pour tirer parti de sa
-méthode `http.read()`, qui renvoie une promesse pour le corps de réponse
-d’une requête HTTP réussie.
-
-Installez-le en tapant :
-
-```sh
-$ npm install q-io --save
-```
-
 ## Tâche
 
 Récupérez du JSON depuis `http://localhost:1337/` et passez-le à `console.log`.
@@ -30,7 +20,4 @@ Il y a deux petites choses que vous devez savoir :
     pour le corps de réponse d’une requête HTTP réussie (code 200).
 2. Parsez le JSON récupéré et affichez-le via `console.log` pour déchirer.
 
-Ce défi peut sembler avancé, mais l’implémentation est plutôt simple.  Si vous êtes
-bloqué-e, jetez un œil à la documentation de `q-io` pour plus d’informations :
-
-  https://github.com/kriskowal/q-io
+Ce défi peut sembler avancé, mais l’implémentation est plutôt simple.
