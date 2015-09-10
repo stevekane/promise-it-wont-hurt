@@ -1,12 +1,13 @@
-var q = require('q')
-  , def = q.defer();
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
 function attachTitle (name) {
   return "DR. " + name;
 }
 
-def.promise
-.then(attachTitle)
+var promise = new Promise(function (fulfill, reject) {
+    fulfill("MANHATTAN");
+});
+promise.then(attachTitle)
 .then(console.log);
-
-def.resolve("MANHATTAN");
