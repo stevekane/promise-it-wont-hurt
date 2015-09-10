@@ -1,39 +1,45 @@
-var q = require('q')
-  , def1 = q.defer()
-  , def2 = q.defer();
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
-function all (prom1, prom2) {
-  var groupDef = q.defer()
-    , counter = 0
+var promise1 = new Promise(function (fulfill, reject) {
+  setTimeout(function () {
+    fulfill("LES PROMESSES");
+  }, 200);
+});
+
+var promise2 = new Promise(function (fulfill, reject) {
+  setTimeout(function () {
+    fulfill("ROXXENT");
+  }, 200);
+});
+
+var all = function (prom1, prom2) {
+  var group = new Promise(function (fulfill, reject) {
+    var counter = 0
     , val1
     , val2;
 
-  prom1
-  .then(function (result) {
-    val1 = result;
-    ++counter;
-    if (counter >=2) groupDef.resolve([val1, val2]);
-  })
-  .then(null, groupDef.reject)
-  .done();
+    prom1
+    .then(function (result) {
+      val1 = result;
+      ++counter;
+      if (counter >=2) fulfill([val1, val2]);
+    })
+    .then(null, reject);
 
-  prom2
-  .then(function (result) {
-    val2 = result;
-    ++counter;
-    if (counter >=2) groupDef.resolve([val1, val2]);
-  })
-  .then(null, groupDef.reject)
-  .done();
+    prom2
+    .then(function (result) {
+      val2 = result;
+      ++counter;
+      if (counter >=2) fulfill([val1, val2]);
+    })
+    .then(null, reject);
+  });
 
-  return groupDef.promise;
-}
+  return group;
+};
 
-all(def1.promise, def2.promise)
+all(promise1, promise2)
 .then(console.log)
-.done();
-
-setTimeout(function () {
-  def1.resolve("LES PROMESSES");
-  def2.resolve("ROXXENT");
-}, 200);
+.catch(console.error);
