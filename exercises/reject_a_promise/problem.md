@@ -14,12 +14,3 @@ function as a rejection handler to the `then` method of your promise.
 
 Manually reject that promise using `setTimeout` with a delay of 300ms and pass
 it an `Error` object with parameter `"REJECTED!"`;
-
-## Boilerplate
-
-```js
-var q = require('q');
-var defer = q.defer();
-
-// your solution here
-```

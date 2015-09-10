@@ -7,7 +7,7 @@ function printError (err) {
 }
 
 var promise = new Promise(function (fulfill, reject) {
-	setTImeout(reject, 300, new Error("REJETE"));
+    setTImeout(reject, 300, new Error("REJETE !"));
 };
 
 promise.then(null, printError);
