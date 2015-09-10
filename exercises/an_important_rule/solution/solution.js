@@ -1,4 +1,6 @@
-var q = require('q');
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
 function iterate (num) {
   console.log(num);
@@ -9,8 +11,11 @@ function alwaysThrows () {
   throw new Error("OH NOES");
 };
 
-q.fcall(iterate, 1)
-.then(iterate)
+var promise = new Promise(function (fulfill, reject) {
+	fulfill(iterate(1));
+});
+
+promise.then(iterate)
 .then(iterate)
 .then(iterate)
 .then(iterate)

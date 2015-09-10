@@ -44,22 +44,6 @@ It is worth pointing out that both the synchronous **and** asynchronous
 code have the same problem.  If the rejection handler itself throws
 an error you are going to have a bad time.
 
-Many promise libraries try to ameliorate this problem for you
-by providing a `done` handler that simply handles any uncaught
-errors.  The rule of thumb is this:
-
-> If you are **not** returning a value from your promise to a caller,
-> then attach a `done` handler to guard against uncaught exceptions.
-
-An example is shown below:
-
-```js
-doStuff()
-.then(doMoreStuff)
-.then(null, complainAboutJavascript)
-.done();
-```
-
 ## Task
 
 We are going to demonstrate this to ourselves by creating a chain
@@ -69,8 +53,8 @@ of functions that **all** print to the console.
    text `"OH NOES"`;
 2. Create a function `iterate` that prints the first argument
    (an integer) to it and then returns that argument + 1;
-3. Create a promise chain that wraps your iterate method using Q's
-   `fcall` then a series of iterations that attempts to perform `iterate`
+3. Create a promise chain that wraps your iterate method, then a series 
+   of iterations that attempts to perform `iterate`
    a total of 10 times.
 4. Attach `console.log` as a rejection handler at the bottom of your
    chain.
@@ -85,4 +69,3 @@ travel down the promise chain to the first available rejection handler.
 
 Try swapping your rejection handler from `console.log` to `alwaysThrows`.
 Your program will now throw an exception in the global context!  Ahh!
-Try to fix this using the approach described above.
