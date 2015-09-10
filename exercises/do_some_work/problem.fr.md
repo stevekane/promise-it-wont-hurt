@@ -14,9 +14,7 @@ sur notre ami commun : `localhost`.
 * Port 7000 : Pseudo cache de session (à la Redis)
 * Port 7001 : Pseudo base de données (à la MongoDB, LevelDB, Postgres…)
 
-Comme dans la leçon précédente, nous utiliserons le module `q-io` pour
-créer des promesses enrobant les réponses HTTP.  **Astuce :** vous aurez
-sans doute besoin de plus d’une promesse…
+**Astuce :** vous aurez sans doute besoin de plus d’une promesse…
 
 1. Envoyez une requête HTTP GET au cache de session sur le port 7000.
     Vous récupérerez une chaîne de caractère représentant un ID utilisateur.

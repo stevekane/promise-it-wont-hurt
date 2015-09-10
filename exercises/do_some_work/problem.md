@@ -13,9 +13,7 @@ and mine, "localhost".
 * Port 7000: Faux session cache (Redis or some such thing)
 * Port 7001: Faux database (MongoDB, LevelDB, Postgres, etc)
 
-As in the previous lesson, use the `q-io` module to create promises
-as wrappers for HTTP responses.  **Hint:** You will probably need more
-than one promise…
+**Hint:** You will probably need more than one promise…
 
 1. Send an HTTP GET request to the session cache on port 7000.  A string
    will be returned to you representing a user ID.
