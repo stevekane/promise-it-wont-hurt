@@ -1,6 +1,10 @@
-var q = require('q')
-  , def = q.defer();
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
-def.promise.then(console.log, console.log);
-def.resolve("I FIRED");
-def.reject("I DID NOT FIRE");
+var promise = new Promise(function (fulfill, reject) {
+    fulfill("I FIRED");
+    reject("I DID NOT FIRE");
+});
+
+promise.then(console.log, console.log);
