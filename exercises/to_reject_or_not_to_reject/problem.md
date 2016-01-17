@@ -25,7 +25,7 @@ function myFunc(user, callback) {
     callback(null, user);
   }
 
-  return callback("No user was found", null);
+  return callback('No user was found', null);
 }
 ```
 
@@ -48,8 +48,8 @@ After the promise creation, create a function `onRejected` with one parameter
 Lastly, pass `console.log` and the function you just created as the success
 and rejection handlers respectively.
 
-If successful, your script should only log "I FIRED" and should **not** log
-"I DID NOT FIRE".
+If successful, your script should only log “I FIRED” and should **not** log
+“I DID NOT FIRE”.
 
 Note that unlike the prior exercises, you do not have to use `setTimeout` with
 this.
