@@ -31,45 +31,39 @@ exercise.wrapModule(require.resolve('./wrap.js'));
 
 // check if hooks have been activated
 exercise.addVerifyProcessor(function (callback) {
+  var __ = this.__;
   var ok = true;
 
   if (exercise.wrapData.usedPromise) {
-    this.emit('pass', 'Used Promise constructor');
+    this.emit('pass', __('pass.constr'));
   } else {
-    this.emit('fail', 'You didn\'t use the Promise constructor');
+    this.emit('fail', __('fail.constr'));
     ok = false;
   }
 
   if (exercise.wrapData.usedRejectWithError) {
-    this.emit('pass', 'Used reject method with Error object');
+    this.emit('pass', __('pass.funcObj', { func: 'reject', type: 'Error' }));
   } else {
     ok = false;
 
     if (exercise.wrapData.usedReject) {
-      this.emit('fail', 'You used reject method with a non-Error object');
+      this.emit('fail', __('fail.funcObj', { func: 'reject', type: 'Error' }));
     } else {
-      this.emit('fail', 'You didn\'t use the reject method');
+      this.emit('fail', __('fail.func', { func: 'reject' }));
     }
   }
 
   if (exercise.wrapData.usedPrototypeThenSecondCb) {
-    this.emit('pass', 'Used then method');
+    this.emit('pass', __('pass.func', { func: 'then' }));
   } else {
     ok = false;
 
     if (exercise.wrapData.usedPrototypeThenFirstCb) {
-      this.emit('fail',
-        'Almost there! You added a success handler rather than a rejection ' +
-        'handler to the promise in the `.then` call. Review the ' +
-        'instructions, especially the Hints section.'
-      );
+      this.emit('fail', __('fail.successHandler'));
     } else if (exercise.wrapData.usedPrototypeThen) {
-      this.emit('fail',
-        'You called `.then` without any callbacks. Review the last lesson ' +
-        'on how to use `.then` if you need to.'
-      );
+      this.emit('fail', __('fail.noHandlers'));
     } else {
-      this.emit('fail', 'You didn\'t use the `.then` method');
+      this.emit('fail', __('fail.func', { func: 'then' }));
     }
   }
 

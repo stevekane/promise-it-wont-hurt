@@ -4,7 +4,7 @@ var promise = new Promise(function (fulfill, reject) {
 });
 
 function onReject(error) {
-  console.log(error);
+  console.log(error.message);
 }
 
 promise.then(console.log, onReject);

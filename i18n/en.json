@@ -13,5 +13,37 @@
     "multiple_promises": "Multiple promises",
     "fetch_json": "Fetch JSON",
     "do_some_work": "Do some work"
+  },
+  "common": {
+    "exercise": {
+      "pass": {
+	"constr": "Used the Promise constructor",
+	"func": "Used {{{func}}} method",
+	"funcObj": "Used {{{func}}} method with {{{type}}} object",
+	"funcAfter": "Used {{{after}}} method after calling {{{before}}}"
+      },
+      "fail": {
+	"constr": "You didn't use the Promise constructor",
+	"func": "You didn't use {{{func}}} method",
+	"funcObj": "You used {{{func}}} method with non-{{{type}}}",
+	"funcAfter": "You used {{{after}}} method before calling {{{before}}}"
+      }
+    }
+  },
+  "exercises": {
+    "reject_a_promise": {
+      "fail": {
+	"successHandler": "Almost there! You added a success handler rather than a rejection handler to the promise in the `.then` call. Review the instructions, especially the Hints section.",
+	"noHandlers": "You called `.then` without any callbacks. Review the last lesson on how to use `.then` if you need to."
+      }
+    },
+    "to_reject_or_not_to_reject": {
+      "pass": {
+	"thenBoth": "Used then method with both callbacks specified"
+      },
+      "fail": {
+	"thenBoth": "You didn't use then method with both callbacks specified"
+      }
+    }
   }
 }

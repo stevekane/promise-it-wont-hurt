@@ -33,23 +33,25 @@ exercise.wrapModule(require.resolve('./wrap.js'));
 
 // check if hooks have been activated
 exercise.addVerifyProcessor(function (callback) {
+  var __ = this.__;
   var ok = true;
+
   if (exercise.wrapData.usedPromise) {
-    this.emit('pass', 'Used Promise varructor');
+    this.emit('pass', __('pass.constr'));
   } else {
-    this.emit('fail', 'You didn\'t use the Promise varructor');
+    this.emit('fail', __('fail.constr'));
     ok = false;
   }
   if (exercise.wrapData.usedFulfill) {
-    this.emit('pass', 'Used fulfill method');
+    this.emit('pass', __('pass.func', { func: 'fulfill' }));
   } else {
-    this.emit('fail', 'You didn\'t use the fulfill method');
+    this.emit('fail', __('fail.func', { func: 'fulfill' }));
     ok = false;
   }
   if (exercise.wrapData.usedPrototypeThen) {
-    this.emit('pass', 'Used then method');
+    this.emit('pass', __('pass.func', { func: 'then' }));
   } else {
-    this.emit('fail', 'You didn\'t use the then method');
+    this.emit('fail', __('fail.func', { func: 'then' }));
     ok = false;
   }
   process.nextTick(function () {
