@@ -22,16 +22,15 @@ the textual message of the error.
 Create a function to print `error.message` using `console.log`. Pass this
 function as a rejection handler to the `then` method of your promise.
 
+## Hint
+
+As a review from last lesson, a promise's `then` function takes two callbacks:
+the first to be called when the promise is fulfilled and the second when the
+promise is rejected.
+
 ## Boilerplate
 
 ```js
-// Promise shimming. This detects if native Promise is available, and if not
-// fall back onto `es6-promise`.
-
-global.Promise = typeof Promise === 'undefined'
-               ? require('es6-promise').Promise
-               : Promise
-
 var promise = new Promise(function (fulfill, reject) {
   // Your solution here
 })
