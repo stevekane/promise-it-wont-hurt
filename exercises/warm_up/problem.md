@@ -1,10 +1,13 @@
 # What is a promise?
 
-One of the new features in ECMAScript 2015 (also called “ES6” and “Harmony”) is
-a new type of objects: promises. In its most basic terms, a promise is an
-object that defines a method called `then`. The promise object represents a
-value (or values) that may be available some time in the future.  It greatly
-simplifies asynchronous logic in JavaScript.
+One of the new features in **ECMAScript 2015** (also called “ES6” and
+“Harmony”) is a new type of objects: promises. It extends the widely known
+**Promise/A+** specification and standardizes it to be part of the language
+core.
+
+In its most basic terms, a promise is an object that defines a method called
+`then`. The promise object represents a value that may be available some time
+in the future. It greatly simplifies asynchronous logic in JavaScript.
 
 Compare the following code, written in the more traditional idiom of
 asynchronous callbacks, with no error handling:

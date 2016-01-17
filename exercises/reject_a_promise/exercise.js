@@ -6,7 +6,6 @@ var wrappedexec = require('@timothygu/workshopper-wrappedexec');
 var starttime = require('../../lib/starttime');
 var endtime = require('../../lib/endtime');
 
-var MINIMUM = 300;
 var THRESHOLD = 100;
 
 // checks that the submission file actually exists
@@ -19,7 +18,7 @@ exercise = execute(exercise);
 exercise = starttime(exercise);
 
 // end timer
-exercise = endtime(exercise, THRESHOLD, MINIMUM);
+exercise = endtime(exercise, THRESHOLD);
 
 // compare stdout of solution and submission
 exercise = comparestdout(exercise);

@@ -11,11 +11,11 @@ var promise = new Promise(function (fulfill, reject) {
 
 // Create a function to print `error.message` using `console.log`.
 
-function printError(error) {
+function onReject(error) {
   console.log(error.message);
 }
 
 // Pass this function as a rejection handler to the `then` method of the
 // promise (the second parameter).
 
-promise.then(null, printError);
+promise.then(null, onReject);

@@ -1,10 +1,9 @@
 # What happens if we reject AND resolve a promise?
 
-The **Promises/A+** spec states that a promise, once fullfilled or
-rejected, may **not** change states for the rest of its lifetime.  This is
-an important feature of promises and it is also one of the things
-that differentiates it from an `EventEmitter` (and other forms of repeatable
-callbacks).
+The **ES2015** spec states that a promise, once fullfilled or rejected, may
+**not** change states for the rest of its lifetime.  This is an important
+feature of promises and it is also one of the things that differentiates it
+from an `EventEmitter` (and other forms of repeatable callbacks).
 
 Callback-style code usually requires a callback function to be invoked
 somewhere in the body of the function that it was passed to.  Many, if not
@@ -25,7 +24,11 @@ function (user, callback) {
   if (user) {
     callback(null, user);
   }
+
   return callback("No user was found", null);
+
+  // if `user` exists, `callback` is called twice: once with the correct value
+  // and once with a bogus error
 }
 ```
 
@@ -34,11 +37,14 @@ function (user, callback) {
 Let's build a simple script to **prove** to ourselves that promises may only
 resolve one time and all future attempts to resolve them will simply be ignored.
 
-1. Create a promise using `Q.defer`
-2. Pass `console.log` as the first **and** second argument to your promise's
-   `then` method
-3. Resolve the promise with a value of `"I FIRED"`
-4. Reject the promise with a value of `"I DID NOT FIRE"`
+1. Create a promise with an executor that attempts to immediately:
+   1. Fulfill the promise with a value of `'I FIRED'`, and then
+   2. Reject the promise with an `Error` created with parameter `'I DID NOT
+      FIRE'`.
+2. Create a function `onRejected` with one parameter `error` that prints
+   `error.message` with `console.log`.
+3. Pass `console.log` and the function you just created as the two parameters
+   to your promise's `then` method.
 
 If successful, your script should only log "I FIRED" and should **not** log
 "I DID NOT FIRE".
