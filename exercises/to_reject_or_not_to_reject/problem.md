@@ -42,3 +42,6 @@ resolve one time and all future attempts to resolve them will simply be ignored.
 
 If successful, your script should only log "I FIRED" and should **not** log
 "I DID NOT FIRE".
+
+Note that unlike the prior exercises, you do not have to use `setTimeout` with
+this.
