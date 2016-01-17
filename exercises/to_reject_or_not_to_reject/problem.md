@@ -37,14 +37,19 @@ function (user, callback) {
 Let's build a simple script to **prove** to ourselves that promises may only
 resolve one time and all future attempts to resolve them will simply be ignored.
 
-1. Create a promise with an executor that attempts to immediately:
-   1. Fulfill the promise with a value of `'I FIRED'`, and then
-   2. Reject the promise with an `Error` created with parameter `'I DID NOT
-      FIRE'`.
-2. Create a function `onRejected` with one parameter `error` that prints
-   `error.message` with `console.log`.
-3. Pass `console.log` and the function you just created as the two parameters
-   to your promise's `then` method.
+First, create a promise using the Promise constructor as we have been doing.
+
+In the promise's `executor`, immediately attempt to fulfill the promise with a
+value of `'I FIRED'`.
+
+Then, after the `fulfill` call, immediately try to reject the promise with an
+`Error` created with parameter `'I DID NOT FIRE'`.
+
+After the promise creation, create a function `onRejected` with one parameter
+`error` that prints the Error's message with `console.log`.
+
+Lastly, pass `console.log` and the function you just created as the success
+and rejection handlers respectively.
 
 If successful, your script should only log "I FIRED" and should **not** log
 "I DID NOT FIRE".
