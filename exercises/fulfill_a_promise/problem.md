@@ -1,72 +1,39 @@
-# What is a promise?
-
-A promise is an object that defines a method called `then`. The promise object
-represents a value (or values) that may be available some time in the future.
-
-When a promise is fulfilled, any *"success functions"* registered with the
-`then` method will be called with the newly available data as arguments.
-
-If a promise is rejected then any *"failure functions"* registered with the
-`then` method will be called with the `Error` as argument.
-
-For now, do not be concerned with exactly **how** this works or what the syntax
-is.  We are about to dive into that in detail.
-
-## Setup
-
-To do many of the lessons in this workshop, you will need an installation of
-Node.js that supports ECMAScript 2015 promises. That includes Node.js 0.12 or
-higher, and all versions of io.js.
-
-To find out if your Node.js installation has native promise support, execute
-the following in a Node.js REPL:
-
-```js
-typeof Promise !== "undefined"
-```
-
-If the REPL returns "true", then you are good to go! If not, you’ll have to use
-one of the many shims people have implemented. For this tutorial, we recommend
-`es6-promise` which aims to be strictly compliant to ES2015 without any extra
-features. To use `es6-promise`, execute the following in a shell, preferably in
-the directory you’ll write your programs in:
-
-```sh
-npm install es6-promise
-```
-
-Then, at the beginning of every file in this tutorial, add:
-
-```js
-var Promise = require('es6-promise').Promise
-```
-
-Now you can use ES2015 promises!
+# Fulfilling a Promise
 
 ## Task
 
-Create a promise using ES2015 promise.
+Create a promise using ES2015 promise. Manually fulfill that promise using
+`setTimeout` with a delay of 300ms and pass it a parameter of `'RESOLVED!'`.
 
-Pass `console.log` to the `then` method of your promise.
-
-Manually fulfill that promise using `setTimeout` with a delay of 300ms
-and pass it a parameter of `"RESOLVED!"`.
+Then, print the contents of the promise after if has been fulfilled using
+`console.log`.
 
 ## Hint
 
-A promise is created with `new Promise(cb)`, in which `cb` is a callback with
-the signature `function (fulfill, reject)`, where `fulfill` and `reject` are
-two other callbacks called from `cb` to indicate the outcome of the operation.
-For promises, fulfilling (also called resolving) means that the operation
-successfully completes and yields a value, and the value is passed to the
-`fulfill` function as the first argument.
+Most promises are created with `new Promise(cb)`, in which `cb` is a callback
+function with the signature `function (fulfill, reject)`. Inside `cb`, either
+`fulfill` or `reject` is called, to indicate the outcome of the operation. For
+promises, fulfilling means that the operation successfully completes and yields
+a value. In order to pass this value along, call `fulfill` function with this
+value as the first parameter.
 
-As already mentioned above, a promise has a `then` property function. It takes
-two optional callbacks, the first to be called when the promise is fulfilled
-and a second when the promise is rejected. For now, let’s focus on the first
-one. The callback is called with the same value the promise passed to
-`fulfill`, and that allows you to operate upon the value resolved by the
-promise.
+As mentioned in the last lesson, a promise has a `then` property function. It
+is the main way of manipulating promises and their values. It takes two
+optional callbacks `onFulfilled` and `onRejected`: the first will be called
+when the promise is fulfilled, and the second when the promise is rejected.
+When the `fulfill` function is called in `cb` with a value, the promise
+internals pass it along, and then call this first callback with the same value.
+
+In practice, you can call the `then` property function multiple times, to do
+multiple things with the value of the promise. Or, more commonly, you could do
+them all in the same `onFulfilled` callback, which allows you to control more
+easily the logic flows.
+
+If you call `fulfill` function in the constructor without a parameter, the
+`onFulfilled` callback(s) will still be called, but the parameter to those
+callbacks will be `undefined`.
+
+We will talk about rejecting in our next lesson.
 
 ## Boilerplate
 

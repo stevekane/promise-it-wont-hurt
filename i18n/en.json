@@ -2,6 +2,7 @@
   "title": "Promise It Won't Hurt",
   "subtitle": "Learn to use promises in Node and browsers",
   "exercise": {
+    "warm_up": "Warm up",
     "fulfill_a_promise": "Fulfill a promise",
     "reject_a_promise": "Reject a promise",
     "to_reject_or_not_to_reject": "To reject or not to reject",
