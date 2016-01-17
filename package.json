@@ -18,7 +18,7 @@
     "Christophe Porteneuve <tdd@tddsworld.com>",
     "Timothy Gu <timothygu99@gmail.com>"
   ],
-  "license": "BSD",
+  "license": "MIT",
   "bin": "./promiseitwonthurt.js",
   "preferGlobal": true,
   "dependencies": {
