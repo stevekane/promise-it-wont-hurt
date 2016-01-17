@@ -1,15 +1,5 @@
 # Fulfilling a Promise
 
-## Task
-
-Create a promise using ES2015 promise. Manually fulfill that promise using
-`setTimeout` with a delay of 300ms and pass it a parameter of `'RESOLVED!'`.
-
-Then, print the contents of the promise after if has been fulfilled using
-`console.log`.
-
-## Hint
-
 Most promises are created with `new Promise(executor)`, in which `executor` is
 a callback function with the signature `function (fulfill, reject)`. Inside
 `executor`, either `fulfill` or `reject` is called, to indicate the outcome of
@@ -30,11 +20,19 @@ multiple things with the value of the promise. Or, more commonly, you could do
 them all in the same `onFulfilled` callback, which allows you to control more
 easily the logic flows.
 
-If you call `fulfill` function in the constructor without a parameter, the
+If you call `fulfill` function in `executor` without a parameter, the
 `onFulfilled` callback(s) will still be called, but the parameter to those
 callbacks will be `undefined`.
 
 We will talk about rejecting in our next lesson.
+
+## Task
+
+Create a promise. Manually fulfill that promise with a value of `'RESOLVED!'`
+in `executor` with a delay of 300ms using `setTimeout`.
+
+Then, print the contents of the promise after if has been fulfilled using
+`console.log` and `then`.
 
 ## Boilerplate
 
