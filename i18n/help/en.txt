@@ -4,19 +4,6 @@ to use promises effectively in both browser- and server-side JavaScript.
 This module is built on the workshopper module originally extracted from 
 stream-adventure.
 
-This module makes heavy use of the q module, which can be found at:
-
-https://github.com/kriskowal/q
-
-Additionally, the later lessons use the q-io module, which is found at:
-
-https://github.com/kriskowal/q-io
-
-Several other promise modules that are popular are listed below:
-
-https://github.com/petkaantonov/bluebird
-https://github.com/tildeio/rsvp.js
-
 Issues?  Suggestions?  Feedback?
 
 https://github.com/stevekane/promise-it-wont-hurt/issues

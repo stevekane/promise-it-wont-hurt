@@ -35,7 +35,7 @@ Construct a promise chain that returns **values** to prove to yourself
 that promise handlers will wrap your returned values in promises
 allowing additional chaining.
 
-1. Construct a promise using Q's `defer()`
+1. Construct a promise
 2. Construct a function `attachTitle` which prepends `"DR. "` to
    its first argument and returns the result.
 3. Build a promise chain off the promise we constructed initially

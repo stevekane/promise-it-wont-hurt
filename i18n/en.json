@@ -8,7 +8,6 @@
     "always_async": "Always asynchronous",
     "values_and_promises": "Values and promises",
     "throw_an_error": "Throw an error",
-    "using_qfcall": "Using qfcall",
     "an_important_rule": "An important rule",
     "multiple_promises": "Multiple promises",
     "fetch_json": "Fetch JSON",

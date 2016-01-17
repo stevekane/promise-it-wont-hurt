@@ -30,11 +30,11 @@ getAll([fetch(1), fetch(2)])
 
 Let's build this function!
 
-1) Construct two promises using Q's `defer()`
+1) Construct two promises
 2) Construct a function `all` that accepts two promises as arguments.
    Your function should:
 
-   a) Create an internal promise using Q's `defer()` and return it!
+   a) Create an internal promise and return it!
    b) Create a `counter` variable with initial value of 0.
    c) Attach `then` fulfillment handlers to both promises which increment an internal counter
    d) **if** the counter reaches 2, fulfill the internal promise with an array
@@ -47,23 +47,9 @@ Let's build this function!
    and passed to your function with the values `"PROMISES"` and `"FTW"`, respectively.
    Set the timeout delay to 200ms.
 
-**TIP:** Don't forget to pass the `promise` attribute of your deferreds!
-
 If your function is successful it should print out ["PROMISES", "FTW"] which is
 just someone's opinion man!
 
 ## Bonus
 
-Try using Q's `all` method to replace your function.  Note that their implementation
-expects you to pass it an **array** of promises, not as individual arguments.
-
-## Super Bonus
-
-Try using Q's `spread` method to replace your `then` handler on the promise returned
-by `all`.  Note that spread will return individual arguments, which should affect
-your output slightly!
-
-`Q.all`, `.spread`, etc are just some of the many promise utility functions that many
-promise libraries make available or that you can easily build for yourself.  The
-composability of promises (due to them being re-ified objects) is a huge upside
-and you can quickly discover many amazing patterns for building async systems.
+Try using `Promise.all()` method to replace your function.

@@ -1,11 +1,48 @@
-var qhttp = require('q-io/http');
+var Promise = typeof Promise === 'undefined'
+            ? require('es6-promise').Promise
+            : Promise
 
-qhttp.read("http://localhost:7000/")
+var http = require('http');
+
+var promisifiedHttpRequest = function(options) {
+	var hostname = options.hostname || 'localhost';
+	var port = options.port || 80;
+	var path = options.path || '/';
+
+	return new Promise(function (fulfill, reject) {
+	    var options = {
+	        hostname: hostname,
+	        port: port,
+	        path: path
+	    };
+
+	    callback = function(response) {
+	        var str = '';
+
+	        response.on('data', function (chunk) {
+	            str += chunk;
+	        });
+
+	        response.on('end', function () {
+	            fulfill(str);
+	        });
+	    };
+
+	    var req = http.request(options, callback);
+
+	    req.on('error', function (e) {
+	        reject(e);
+	    });
+
+	    req.end();
+	});
+};
+
+promisifiedHttpRequest({port: 7000})
 .then(function (id) {
-  return qhttp.read("http://localhost:7001/" + id);
+  return promisifiedHttpRequest({port: 7001, path: '/' + id});
 })
 .then(function (json) {
   console.log(JSON.parse(json));
 })
-.then(null, console.error)
-.done();
+.catch(console.error);

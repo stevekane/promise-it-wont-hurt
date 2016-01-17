@@ -11,8 +11,6 @@ ni accompli ni rejeté).
 
 ## Tâche
 
-Utilisez `q` pour créer une promesse.
-
 Créez une fonction qui affiche `error.message` à l’aide de `console.log`. Passez
 cette fonction comme gestionnaire de rejet à la méthode `then` de votre promesse
 (2e argument).
@@ -20,12 +18,3 @@ cette fonction comme gestionnaire de rejet à la méthode `then` de votre promes
 Rejetez manuellement la promesse au sein d’un `setTimeout` avec un délai de
 300ms et passez-lui comme argument un objet `Error` créé avec le message
 `"REJETE !"`.
-
-## Base de travail
-
-```js
-var q = require('q');
-var defer = q.defer();
-
-// Votre solution ici
-```

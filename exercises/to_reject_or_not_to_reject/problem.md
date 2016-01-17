@@ -34,7 +34,7 @@ function (user, callback) {
 Let's build a simple script to **prove** to ourselves that promises may only
 resolve one time and all future attempts to resolve them will simply be ignored.
 
-1. Create a promise using `Q.defer`
+1. Create a promise
 2. Pass `console.log` as the first **and** second argument to your promise's
    `then` method
 3. Resolve the promise with a value of `"I FIRED"`

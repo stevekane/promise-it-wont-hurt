@@ -15,7 +15,7 @@ la boucle d’événements.
 Dans cette leçon, nous allons nous prouver qu’il en est bien ainsi en
 écrivant un script qui suit le scénario que voici :
 
-1. Créez une promesse avec la bibliothèque `q`
+1. Créez une promesse
 2. Passez `console.log` à la méthode `then` de notre promesse
 3. Accomplissez la promesse avec le paramètre `"SECOND"`
 4. Écrivez `"PREMIER"` sur la console à l’aide de `console.log`

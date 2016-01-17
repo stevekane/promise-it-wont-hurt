@@ -38,7 +38,7 @@ Construisez une chaîne de promesses qui renvoie des **valeurs** pour vous
 prouver que les gestionnaires de promesse vont les enrober automatiquement
 dans des promesses, ce qui permet du chaînage supplémentaire.
 
-1. Construisez une promesse à l’aide u `defer()` de Q.
+1. Construisez une promesse.
 2. Construisez une fonction `attachTitle` qui préfixe son premier argument
     avec le texte `"DR. "` et renvoie le résultat.
 3. Construisez une chaîne de promesses à partir de celle créée initialement, qui
