@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": [
+    "airbnb/legacy",
+    "airbnb/rules/node"
+  ],
+  "rules": {
+    "func-names": 0,
+    "no-console": 0,
+    "no-unused-vars": [ 2, { "args": "none" } ]
+  }
+}

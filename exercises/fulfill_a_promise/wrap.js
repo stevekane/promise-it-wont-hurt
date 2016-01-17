@@ -1,45 +1,53 @@
-function capitalize (str) {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
+'use strict';
 
-function wrap (ctx) {
-  ctx.usedPromise = false
-  ctx.usedFulfill = false
+function wrap(ctx) {
+  /* eslint-disable no-extend-native, no-param-reassign, no-native-reassign, no-undef */
+  var p;
+  var savedPrototype;
 
-  require('es6-promise')
-  var p = Promise
+  function isInUserCode(stack) {
+    return stack[0].getFileName().substring(0, ctx.mainProgram.length)
+      === ctx.mainProgram;
+  }
+
+  ctx.usedPromise = false;
+  ctx.usedFulfill = false;
+
+  require('es6-promise');
+  p = Promise;
 
   Promise = function (func) {
-    var stack = ctx.$captureStack(Promise)
-    var inUserCode = stack[0].getFileName().substring(0, ctx.mainProgram.length) === ctx.mainProgram
+    var stack = ctx.$captureStack(Promise);
+    var inUserCode = isInUserCode(stack);
 
-    ctx.usedPromise = ctx.usedPromise || inUserCode
+    ctx.usedPromise = ctx.usedPromise || inUserCode;
     return p.call(this, function (fulfill, reject) {
       func(function (val) {
-        ctx.usedFulfill = ctx.usedFulfill || inUserCode
-        fulfill(val)
-      }, reject)
-    })
-  }
+        ctx.usedFulfill = ctx.usedFulfill || inUserCode;
+        fulfill(val);
+      }, reject);
+    });
+  };
 
-  var savedPrototype = {
-    then: p.prototype.then
-  }
-  Promise.prototype = p.prototype
-  ctx.usedPrototypeThen = false
+  savedPrototype = {
+    then: p.prototype.then,
+  };
+
+  Promise.prototype = p.prototype;
+  ctx.usedPrototypeThen = false;
 
   Promise.prototype.then = function () {
-    var stack = ctx.$captureStack(Promise.prototype.then)
-    var inUserCode = stack[0].getFileName().substring(0, ctx.mainProgram.length) === ctx.mainProgram
+    var stack = ctx.$captureStack(Promise.prototype.then);
+    var inUserCode = isInUserCode(stack);
 
-    ctx.usedPrototypeThen = ctx.usedPrototypeThen || inUserCode
+    ctx.usedPrototypeThen = ctx.usedPrototypeThen || inUserCode;
 
-    return savedPrototype.then.apply(this, arguments)
-  }
-
+    return savedPrototype.then.apply(this, arguments);
+  };
+  /* eslint-enable no-extend-native, no-param-reassign, no-undef */
 }
 
-wrap.wrapSubmission = true
-wrap.wrapSolution = true
+wrap.wrapSubmission = true;
+wrap.wrapSolution = true;
 
-module.exports = wrap
+module.exports = wrap;

@@ -38,9 +38,11 @@ We will talk about rejecting in our next lesson.
 ## Boilerplate
 
 ```js
+'use strict';
+
 var promise = new Promise(function (fulfill, reject) {
   // Your solution here
-})
+});
 
 // Your solution here
 ```

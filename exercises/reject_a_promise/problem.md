@@ -33,7 +33,7 @@ promise is rejected.
 ```js
 var promise = new Promise(function (fulfill, reject) {
   // Your solution here
-})
+});
 
 function printError (error) {
   // Your solution here
