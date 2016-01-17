@@ -14,21 +14,18 @@ app or insidious bugs.
 
 ```js
 /*
-  this code is bad, but nonetheless common and has the nasty result of calling
-  the supplied callback more than once (possibly destroying the earth?)
-  it is conventional to return the first invocation of callback but it's
-  easy to overlook!
-*/
+ * This code is bad, but nonetheless common and has the nasty result of
+ * calling the supplied callback more than once (possibly destroying the
+ * earth?). It is conventional to return the first invocation of callback
+ * but it's easy to overlook!
+ */
 
-function (user, callback) {
+function myFunc(user, callback) {
   if (user) {
     callback(null, user);
   }
 
   return callback("No user was found", null);
-
-  // if `user` exists, `callback` is called twice: once with the correct value
-  // and once with a bogus error
 }
 ```
 
