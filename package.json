@@ -25,7 +25,7 @@
     "node-uuid": "~1.4.1",
     "q": "^1.1.2",
     "q-io": "^1.11.6",
-    "workshopper": "^2.3.1",
+    "@timothygu/workshopper": "^2.7.2",
     "workshopper-exercise": "^2.3.0"
   }
 }
