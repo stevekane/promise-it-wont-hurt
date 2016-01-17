@@ -1,23 +1,21 @@
 # What is a promise?
 
-A promise is an object that defines a method called `then`.
-The promise object represents a value (or values) that may
-be available some time in the future.
+A promise is an object that defines a method called `then`. The promise object
+represents a value (or values) that may be available some time in the future.
 
-When a promise is resolved, any *"success functions"* registered
-with the `then` method will be called with the newly available
-data as arguments.
+When a promise is fulfilled, any *"success functions"* registered with the
+`then` method will be called with the newly available data as arguments.
 
-If a promise is rejected then any *"failure functions"* registered
-with the `then` method will be called with the `Error` as argument.
+If a promise is rejected then any *"failure functions"* registered with the
+`then` method will be called with the `Error` as argument.
 
-For now, do not be concerned with exactly **how** this works or what
-the syntax is.  We are about to dive into that in detail.
+For now, do not be concerned with exactly **how** this works or what the syntax
+is.  We are about to dive into that in detail.
 
 ## Setup
 
 To do many of the lessons in this workshop, you will need an installation of
-Node.js that supports ECMAScript 6 promises. That includes Node.js 0.12 or
+Node.js that supports ECMAScript 2015 promises. That includes Node.js 0.12 or
 higher, and all versions of io.js.
 
 To find out if your Node.js installation has native promise support, execute
@@ -29,8 +27,9 @@ typeof Promise !== "undefined"
 
 If the REPL returns "true", then you are good to go! If not, you’ll have to use
 one of the many shims people have implemented. For this tutorial, we recommend
-`es6-promise` which aims to be strictly compliant to ES6 without any extra
-features. To use `es6-promise`, execute the following in a shell, preferably in the directory you’ll write your programs in:
+`es6-promise` which aims to be strictly compliant to ES2015 without any extra
+features. To use `es6-promise`, execute the following in a shell, preferably in
+the directory you’ll write your programs in:
 
 ```sh
 npm install es6-promise
@@ -42,11 +41,11 @@ Then, at the beginning of every file in this tutorial, add:
 var Promise = require('es6-promise').Promise
 ```
 
-Now you can use ES6 promises!
+Now you can use ES2015 promises!
 
 ## Task
 
-Create a promise using ES6 promise.
+Create a promise using ES2015 promise.
 
 Pass `console.log` to the `then` method of your promise.
 
@@ -72,6 +71,13 @@ promise.
 ## Boilerplate
 
 ```js
+// Promise shimming. This detects if native Promise is available, and if not
+// fall back onto `es6-promise`.
+
+global.Promise = typeof Promise === 'undefined'
+               ? require('es6-promise').Promise
+               : Promise
+
 var promise = new Promise(function (fulfill, reject) {
   // Your solution here
 })

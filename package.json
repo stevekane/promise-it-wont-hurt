@@ -22,8 +22,10 @@
   "bin": "./promiseitwonthurt.js",
   "preferGlobal": true,
   "dependencies": {
+    "bl": "^1.0.0",
     "es6-promise": "^2.0.1",
     "node-uuid": "~1.4.1",
+    "through2": "^2.0.0",
     "workshopper": "^2.3.1",
     "workshopper-exercise": "^2.3.0"
   }
