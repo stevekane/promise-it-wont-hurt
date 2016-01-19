@@ -7,6 +7,7 @@
     "reject_a_promise": "Rechazar una promesa",
     "to_reject_or_not_to_reject": "Rechazar, o no rechazar",
     "always_async": "Siempre asincrónico",
+    "shortcuts": "Shortcuts",
     "values_and_promises": "Valores y promesas",
     "throw_an_error": "Lanza un error",
     "an_important_rule": "Una regla importante",
@@ -20,13 +21,13 @@
 	"constr": "Constructor Promise utilizado",
 	"func": "Método {{{func}}} utilizado",
 	"funcObj": "Método {{{func}}} utilizado con un objeto de {{{type}}}",
-	"funcObj": "Método {{{after}}} utilizado después de {{{before}}}"
+	"funcAfter": "Método {{{after}}} utilizado después de {{{before}}}"
       },
       "fail": {
 	"constr": "Constructor Promise no utilizado",
 	"func": "Método {{{func}}} no utilizado",
 	"funcObj": "Método {{{func}}} no utilizado con un objeto de {{{type}}}",
-	"funcObj": "Método {{{after}}} utilizado antes de {{{before}}}"
+	"funcAfter": "Método {{{after}}} utilizado antes de {{{before}}}"
       }
     }
   },
@@ -42,7 +43,12 @@
 	"thenBoth": "Used then method with both callbacks specified"
       },
       "fail": {
-	"thenBoth": "You didn't use then method with both callbacks specified"
+	"thenBoth": "You didn’t use then method with both callbacks specified"
+      }
+    },
+    "shortcuts": {
+      "fail": {
+	"funcOr": "No se utilizan ni {{{func1}}} ni {{{func2}}}"
       }
     }
   }
