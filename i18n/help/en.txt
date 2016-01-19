@@ -1,23 +1,19 @@
-Welcome to Promise it won't hurt! -- an automated workshop explaining how 
+Welcome to Promise It Won’t Hurt! -- an automated workshop explaining how 
 to use promises effectively in both browser- and server-side JavaScript.
 
 This module is built on the workshopper module originally extracted from 
 stream-adventure.
 
-This module makes heavy use of the q module, which can be found at:
+This workshop was originally created as an introduction to Q, but has since
+evolved into one for ES2015 promises.
 
-https://github.com/kriskowal/q
-
-Additionally, the later lessons use the q-io module, which is found at:
-
-https://github.com/kriskowal/q-io
-
-Several other promise modules that are popular are listed below:
+Several other promise modules that are popular and more or less compatible
+with ES2015 are listed below:
 
 https://github.com/petkaantonov/bluebird
 https://github.com/tildeio/rsvp.js
 
-Issues?  Suggestions?  Feedback?
+Issues? Suggestions? Feedback?
 
 https://github.com/stevekane/promise-it-wont-hurt/issues
 
