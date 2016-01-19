@@ -28,11 +28,11 @@ We will talk about rejecting in our next lesson.
 
 ## Task
 
-Create a promise. Manually fulfill that promise with a value of `'FULFILLED!'`
-in `executor` with a delay of 300ms using `setTimeout`.
+Create a promise. Have it fulfilled with a value of `'FULFILLED!'` in
+`executor` after a delay of 300ms, using `setTimeout`.
 
-Then, print the contents of the promise after if has been fulfilled using
-`console.log` and `then`.
+Then, print the contents of the promise after if has been fulfilled by passing
+`console.log` to `then`.
 
 ## Boilerplate
 
