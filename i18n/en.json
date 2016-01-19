@@ -1,5 +1,5 @@
 {
-  "title": "Promise It Won't Hurt",
+  "title": "Promise It Won’t Hurt",
   "subtitle": "Learn to use promises in Node and browsers",
   "exercise": {
     "warm_up": "Warm up",
@@ -23,8 +23,8 @@
 	"funcAfter": "Used {{{after}}} method after calling {{{before}}}"
       },
       "fail": {
-	"constr": "You didn't use the Promise constructor",
-	"func": "You didn't use {{{func}}} method",
+	"constr": "You didn’t use the Promise constructor",
+	"func": "You didn’t use {{{func}}} method",
 	"funcObj": "You used {{{func}}} method with non-{{{type}}}",
 	"funcAfter": "You used {{{after}}} method before calling {{{before}}}"
       }
@@ -42,7 +42,7 @@
 	"thenBoth": "Used then method with both callbacks specified"
       },
       "fail": {
-	"thenBoth": "You didn't use then method with both callbacks specified"
+	"thenBoth": "You didn’t use then method with both callbacks specified"
       }
     }
   }
