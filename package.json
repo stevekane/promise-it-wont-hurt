@@ -22,13 +22,12 @@
   "bin": "./promise-it-wont-hurt.js",
   "preferGlobal": true,
   "dependencies": {
+    "@timothygu/workshopper": "^2.7.4",
     "@timothygu/workshopper-wrappedexec": "^0.1.4",
-    "bl": "^1.0.0",
     "es6-promise": "^2.0.1",
     "node-uuid": "~1.4.1",
-    "through2": "^2.0.0",
-    "@timothygu/workshopper": "^2.7.4",
-    "workshopper-exercise": "^2.3.0"
+    "workshopper-exercise": "^2.3.0",
+    "workshopper-timer": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^1.10.3",

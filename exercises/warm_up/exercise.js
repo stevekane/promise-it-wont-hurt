@@ -4,7 +4,7 @@ var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
-var timer = require('../../lib/timer.js');
+var timer = require('workshopper-timer');
 
 var THRESHOLD = 100;
 
