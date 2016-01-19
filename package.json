@@ -19,7 +19,7 @@
     "Timothy Gu <timothygu99@gmail.com>"
   ],
   "license": "MIT",
-  "bin": "./promiseitwonthurt.js",
+  "bin": "./promise-it-wont-hurt.js",
   "preferGlobal": true,
   "dependencies": {
     "@timothygu/workshopper-wrappedexec": "^0.1.4",
