@@ -1,7 +1,7 @@
 'use strict';
 
 function wrap(ctx) {
-  /* eslint-disable no-extend-native, no-param-reassign, no-native-reassign, no-undef */
+  /* eslint-disable new-cap, no-extend-native, no-param-reassign, no-native-reassign, no-undef */
   var p;
   var savedPrototype;
 
@@ -20,9 +20,9 @@ function wrap(ctx) {
     var stack = ctx.$captureStack(Promise);
     var inUserCode = isInUserCode(stack);
     var transformedFunc = function (fulfill, reject) {
-      func(function (val) {
+      func(function (value) {
         ctx.usedFulfill = ctx.usedFulfill || inUserCode;
-        fulfill(val);
+        fulfill(value);
       }, reject);
     };
 
@@ -30,9 +30,9 @@ function wrap(ctx) {
 
     if (this instanceof Promise) {
       return new p(transformedFunc);
-    } else {
-      return p(transformedFunc);
     }
+
+    return p(transformedFunc);
   };
 
   savedPrototype = {
@@ -42,7 +42,7 @@ function wrap(ctx) {
   Promise.prototype = p.prototype;
   ctx.usedPrototypeThen = false;
 
-  Promise.prototype.then = function () {
+  Promise.prototype.then = function (onFulfilled, onRejected) {
     var stack = ctx.$captureStack(Promise.prototype.then);
     var inUserCode = isInUserCode(stack);
 
@@ -50,7 +50,7 @@ function wrap(ctx) {
 
     return savedPrototype.then.apply(this, arguments);
   };
-  /* eslint-enable no-extend-native, no-param-reassign, no-undef */
+  /* eslint-enable new-cap, no-extend-native, no-param-reassign, no-undef */
 }
 
 wrap.wrapSubmission = true;

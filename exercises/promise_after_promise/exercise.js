@@ -39,8 +39,9 @@ exercise.addVerifyProcessor(function (callback) {
     this.emit('pass', __('pass.returnedPromise'));
   } else {
     ok = false;
+
     if (this.wrapData.usedFirst) {
-      this.emit('fail', __('fail.returnedPromise', { returned: exercise.wrapData.returned }))
+      this.emit('fail', __('fail.returnedPromise', { returned: exercise.wrapData.returned }));
     } else {
       this.emit('fail', __('fail.func', { func: 'first' }));
     }

@@ -1,7 +1,7 @@
 'use strict';
 
 function wrap(ctx) {
-  /* eslint-disable no-extend-native, no-param-reassign, no-native-reassign, no-undef */
+  /* eslint-disable new-cap, no-extend-native, no-param-reassign, no-native-reassign, no-undef */
   var p;
   var savedPrototype;
 
@@ -32,9 +32,9 @@ function wrap(ctx) {
 
     if (this instanceof Promise) {
       return new p(transformedFunc);
-    } else {
-      return p(transformedFunc);
     }
+
+    return p(transformedFunc);
   };
 
   savedPrototype = {
@@ -58,7 +58,7 @@ function wrap(ctx) {
 
     return savedPrototype.then.apply(this, arguments);
   };
-  /* eslint-enable no-extend-native, no-param-reassign, no-undef */
+  /* eslint-enable new-cap, no-extend-native, no-param-reassign, no-undef */
 }
 
 wrap.wrapSubmission = true;

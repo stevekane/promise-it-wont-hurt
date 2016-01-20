@@ -1,5 +1,7 @@
 'use strict';
 
+/* global first, second */
+
 var firstPromise = first();
 
 var secondPromise = firstPromise.then(function (val) {

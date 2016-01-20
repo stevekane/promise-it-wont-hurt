@@ -36,8 +36,8 @@ exercise.addVerifyProcessor(function (callback) {
   if (exercise.wrapData.usedFulfill) {
     this.emit('pass', __('pass.func', { func: 'fulfill' }));
   } else {
-    this.emit('fail', __('fail.func', { func: 'fulfill' }));
     ok = false;
+    this.emit('fail', __('fail.func', { func: 'fulfill' }));
   }
 
   if (exercise.wrapData.usedPrototypeThenAfterFulfill) {
@@ -48,7 +48,7 @@ exercise.addVerifyProcessor(function (callback) {
     if (exercise.wrapData.usedPrototypeThen) {
       this.emit('fail', __('fail.funcAfter', { before: 'fulfill', after: 'then' }));
     } else {
-      this.emit('fail', __('fail.func', { func: 'then' }))
+      this.emit('fail', __('fail.func', { func: 'then' }));
     }
   }
 

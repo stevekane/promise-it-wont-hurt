@@ -1,3 +1,5 @@
+'use strict';
+
 // Create a promise
 
 var promise = new Promise(function (fulfill, reject) {

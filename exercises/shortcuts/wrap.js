@@ -17,17 +17,12 @@ function wrap(ctx) {
   require('es6-promise');
   p = Promise;
 
-  Promise = function (func) {
-    return p.call(this, func);
-  };
-
   savedPrototype = {};
 
-  Promise.prototype = p.prototype;
   ctx.usedPrototypeCatch = false;
   savedPrototype.catch = p.prototype.catch;
 
-  Promise.prototype.catch = function () {
+  Promise.prototype.catch = function (onRejected) {
     var stack = ctx.$captureStack(Promise.prototype.catch);
     var inUserCode = isInUserCode(stack);
 
@@ -36,7 +31,7 @@ function wrap(ctx) {
     return savedPrototype.catch.apply(this, arguments);
   };
 
-  ;['reject', 'resolve'].forEach(function (f) {
+  ['reject', 'resolve'].forEach(function (f) {
     var capF = capitalize(f);
 
     if (typeof p[f] === 'function') {

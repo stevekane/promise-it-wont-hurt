@@ -38,18 +38,21 @@ exercise.addVerifyProcessor(function (callback) {
     this.emit('fail', __('fail.constr'));
     ok = false;
   }
+
   if (exercise.wrapData.usedFulfill) {
     this.emit('pass', __('pass.func', { func: 'fulfill' }));
   } else {
-    this.emit('fail', __('fail.func', { func: 'fulfill' }));
     ok = false;
+    this.emit('fail', __('fail.func', { func: 'fulfill' }));
   }
+
   if (exercise.wrapData.usedPrototypeThen) {
     this.emit('pass', __('pass.func', { func: 'then' }));
   } else {
-    this.emit('fail', __('fail.func', { func: 'then' }));
     ok = false;
+    this.emit('fail', __('fail.func', { func: 'then' }));
   }
+
   process.nextTick(function () {
     callback(null, ok);
   });

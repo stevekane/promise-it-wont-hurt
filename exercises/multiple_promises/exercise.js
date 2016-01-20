@@ -17,7 +17,7 @@ exercise = timer(exercise, THRESHOLD);
 exercise = comparestdout(exercise);
 exercise = wrappedexec(exercise, 'all');
 
-exercise.wrapData.data = [ rnd(), rnd() ];
+exercise.wrapData.data = [rnd(), rnd()];
 exercise.wrapData.rand = Math.round(Math.random()) * 2 - 1;
 
 exercise.wrapModule(require.resolve('./wrap.js'));
@@ -30,6 +30,7 @@ exercise.addVerifyProcessor(function (callback) {
     this.emit('pass', __('pass.inAll'));
   } else {
     ok = false;
+
     if (exercise.wrapData.usedPrototypeThen) {
       this.emit('fail', __('fail.inAll'));
     } else {

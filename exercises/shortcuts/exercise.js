@@ -4,7 +4,6 @@ var path = require('path');
 var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
-var comparestdout = require('workshopper-exercise/comparestdout');
 var wrappedexec = require('@timothygu/workshopper-wrappedexec');
 
 // checks that the submission file actually exists
@@ -24,7 +23,7 @@ exercise.addProcessor(function (mode, callback) {
   return this.on('executeEnd', function () {
     callback(null, true);
   });
-})
+});
 
 // make sure Promise is available
 // and wrap Promise with hooks used to check if the user used Promises as
@@ -42,11 +41,12 @@ exercise.addVerifyProcessor(function (callback) {
   } else if (exercise.wrapData.usedPromiseReject) {
     this.emit('pass', __('pass.func', { func: 'Promise.reject' }));
   } else {
+    ok = false;
+
     this.emit('fail', __('fail.funcOr', {
       func1: 'Promise.resolve',
-      func2: 'Promise.reject'
+      func2: 'Promise.reject',
     }));
-    ok = false;
   }
 
   if (exercise.wrapData.usedPrototypeCatch) {

@@ -3,7 +3,6 @@
 function wrap(ctx) {
   /* eslint-disable no-extend-native, no-param-reassign, no-native-reassign, no-undef */
   var p;
-  var savedPrototype;
 
   function isInUserCode(stack) {
     return stack[0].getFileName().substring(0, ctx.mainProgram.length)
@@ -27,14 +26,15 @@ function wrap(ctx) {
     });
 
     out.then = function (onFulfilled, onRejected) {
-      used = true;
-
       var stack = ctx.$captureStack(out.then);
+      var i;
+
+      used = true;
 
       if (isInUserCode(stack)) ctx.usedPrototypeThen = true;
 
-      for (var i = 0; i < stack.length; i++) {
-        if (isInUserCode([ stack[i] ]) &&
+      for (i = 0; i < stack.length; i++) {
+        if (isInUserCode([stack[i]]) &&
             stack[i].getFunctionName() === 'all') {
           ctx.isInAll = true;
         }
