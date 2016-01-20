@@ -24,7 +24,6 @@
   "dependencies": {
     "@timothygu/workshopper": "^2.7.4",
     "@timothygu/workshopper-wrappedexec": "^0.1.4",
-    "boganipsum": "^0.1.0",
     "es6-promise": "^3.0.2",
     "node-uuid": "~1.4.1",
     "random-word": "^1.0.2",

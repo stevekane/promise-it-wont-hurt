@@ -6,7 +6,7 @@ var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
 var wrappedexec = require('@timothygu/workshopper-wrappedexec');
 var timer = require('workshopper-timer');
-var bogan = require('boganipsum');
+var rnd = require('random-word');
 
 // checks that the submission file actually exists
 exercise = filecheck(exercise);
@@ -22,11 +22,7 @@ exercise = comparestdout(exercise);
 // instructed
 exercise = wrappedexec(exercise, 'all');
 
-exercise.wrapData.firstSentinel = bogan({
-  paragraphs: 1,
-  sentenceMin: 1,
-  sentenceMax: 1,
-});
+exercise.wrapData.firstSentinel = rnd();
 
 exercise.wrapModule(require.resolve('./wrap.js'));
 
