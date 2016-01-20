@@ -59,6 +59,14 @@
       "fail": {
         "returnedPromise": "You did not return a promise from first().then, but instead you returned {{{returned}}}"
       }
+    },
+    "multiple_promises": {
+      "pass": {
+        "inAll": "You called then from function all"
+      },
+      "fail": {
+        "inAll": "You did not call then from function all"
+      }
     }
   }
 }

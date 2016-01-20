@@ -27,6 +27,7 @@
     "boganipsum": "^0.1.0",
     "es6-promise": "^3.0.2",
     "node-uuid": "~1.4.1",
+    "random-word": "^1.0.2",
     "shasum": "^1.0.2",
     "workshopper-exercise": "^2.3.0",
     "workshopper-timer": "^1.0.0"

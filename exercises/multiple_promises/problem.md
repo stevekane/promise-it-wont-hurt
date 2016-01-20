@@ -1,12 +1,11 @@
 # Can you do what `async` does?
 
-When doing asynchronous programming you will often want to
-perform multiple operations in parallel.  In some cases
-you may wish to delay further processing until a list of
-async operations have completed.
+When doing asynchronous programming you will often want to perform multiple
+operations in parallel. In some cases you may wish to delay further processing
+until a list of async operations have completed.
 
-In synchronous code this is trivial because our operations
-are executed in the order they are specified:
+In synchronous code this is trivial because our operations are executed in the
+order they are specified:
 
 ```js
 var thingOne = getThing(1);
@@ -15,55 +14,48 @@ var thingTwo = getThing(2);
 combine(thingOne, thingTwo);
 ```
 
-We would like to build a function such that we can specify a list
-of asynchronous values we would like to fetch and then use once all
-are available.
+We would like to build a function such that we can specify a list of
+asynchronous values we would like to fetch and then use once all are
+available.
 
 ```js
-getAll([fetch(1), fetch(2)])
-.then(function (first, second) {
-  console.log(first, second);
-});
+getAll(fetch(1), fetch(2))
+  .then(function (values) {
+    console.log(values[0], values[1]);
+  });
 ```
 
 ## Task
 
-Let's build this function!
+Let’s build this function!
 
-1) Construct two promises using Q's `defer()`
-2) Construct a function `all` that accepts two promises as arguments.
-   Your function should:
+Create a function `all` that accepts two promises as arguments. This `all`
+function should do all of the following:
 
-   a) Create an internal promise using Q's `defer()` and return it!
-   b) Create a `counter` variable with initial value of 0.
-   c) Attach `then` fulfillment handlers to both promises which increment an internal counter
-   d) **if** the counter reaches 2, fulfill the internal promise with an array
-      containing **both** values.
-   e) **Also** attach rejection handlers to both promises which both reject the internal promise!
+Create an internal promise in whatever way you see fit.
 
-3) Pass your two promises into your new function and then attach `console.log` as
-   a fulfillment handler to the promise returned by your function.
-4) Attach a function to `setTimeout` that resolves both of the promises you created
-   and passed to your function with the values `"PROMISES"` and `"FTW"`, respectively.
-   Set the timeout delay to 200ms.
+Create a `counter` variable with initial value of 0.
 
-**TIP:** Don't forget to pass the `promise` attribute of your deferreds!
+Attach `then` fulfillment handlers to both promises and increment the internal
+counter when the handlers are called.
 
-If your function is successful it should print out ["PROMISES", "FTW"] which is
-just someone's opinion man!
+When the counter reaches 2, fulfill the internal promise with an array
+containing **both** values.
 
-## Bonus
+Finally return that internal promise to the user.
 
-Try using Q's `all` method to replace your function.  Note that their implementation
-expects you to pass it an **array** of promises, not as individual arguments.
+After you finish writing your `all` function, pass `getPromise1()` and
+`getPromise2()` into your new function and then attach `console.log` as a
+fulfillment handler to the promise returned by your function. These two
+promise-returning functions will be provided to you in the global scope.
 
-## Super Bonus
+## Hint
 
-Try using Q's `spread` method to replace your `then` handler on the promise returned
-by `all`.  Note that spread will return individual arguments, which should affect
-your output slightly!
+You probably want to use the good old Promise constructor. If you do find some
+other way, please [file an
+issue](https://github.com/stevekane/promise-it-wont-hurt/issues); I’m
+interested in such a solution!
 
-`Q.all`, `.spread`, etc are just some of the many promise utility functions that many
-promise libraries make available or that you can easily build for yourself.  The
-composability of promises (due to them being re-ified objects) is a huge upside
-and you can quickly discover many amazing patterns for building async systems.
+To those of you who are already familiar with ES2015 promises, you might
+notice that this task is similar to what `Promise.all` can do. Rest assured
+that `Promise.all` is disabled in this lesson 😈
