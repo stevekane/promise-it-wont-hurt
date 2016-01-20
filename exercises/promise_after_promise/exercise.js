@@ -8,11 +8,15 @@ var wrappedexec = require('@timothygu/workshopper-wrappedexec');
 var timer = require('workshopper-timer');
 var rnd = require('random-word');
 
+var THRESHOLD = 100;
+
 // checks that the submission file actually exists
 exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
 exercise = execute(exercise);
+
+exercise = timer(exercise, THRESHOLD);
 
 // compare stdout of solution and submission
 exercise = comparestdout(exercise);
