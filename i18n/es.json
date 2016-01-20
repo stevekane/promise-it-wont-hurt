@@ -18,37 +18,37 @@
   "common": {
     "exercise": {
       "pass": {
-	"constr": "Constructor de promesas utilizado",
-	"func": "Método {{{func}}} utilizado",
-	"funcObj": "Método {{{func}}} utilizado con un objeto de {{{type}}}",
-	"funcAfter": "Método {{{after}}} utilizado después de {{{before}}}"
+        "constr": "Constructor de promesas utilizado",
+        "func": "Método {{{func}}} utilizado",
+        "funcObj": "Método {{{func}}} utilizado con un objeto de {{{type}}}",
+        "funcAfter": "Método {{{after}}} utilizado después de {{{before}}}"
       },
       "fail": {
-	"constr": "Constructor de promesas no utilizado",
-	"func": "Método {{{func}}} no utilizado",
-	"funcObj": "Método {{{func}}} no utilizado con un objeto de {{{type}}}",
-	"funcAfter": "Método {{{after}}} utilizado antes de {{{before}}}"
+        "constr": "Constructor de promesas no utilizado",
+        "func": "Método {{{func}}} no utilizado",
+        "funcObj": "Método {{{func}}} no utilizado con un objeto de {{{type}}}",
+        "funcAfter": "Método {{{after}}} utilizado antes de {{{before}}}"
       }
     }
   },
   "exercises": {
     "reject_a_promise": {
       "fail": {
-	"successHandler": "¡Casi lo logras! Agregaste un manejador en caso de éxito en vez de en caso de falla a la promesa, en la llamada a `.then`. Revisa las instrucciones, especialmente la sección de Pistas.",
-	"noHandlers": "Llamaste a `.then` sin callbacks (llamadas de vuelta). Revisa la última sección de como usar `.then` si lo necesitas."
+        "successHandler": "¡Casi lo logras! Agregaste un manejador en caso de éxito en vez de en caso de falla a la promesa, en la llamada a `.then`. Revisa las instrucciones, especialmente la sección de Pistas.",
+        "noHandlers": "Llamaste a `.then` sin callbacks (llamadas de vuelta). Revisa la última sección de como usar `.then` si lo necesitas."
       }
     },
     "to_reject_or_not_to_reject": {
       "pass": {
-	"thenBoth": "Usaste el método `then` especificando ambas llamadas de vuelta."
+        "thenBoth": "Usaste el método `then` especificando ambas llamadas de vuelta."
       },
       "fail": {
-	"thenBoth": "No usaste el método `then` especificando ambas llamadas de vuelta."
+        "thenBoth": "No usaste el método `then` especificando ambas llamadas de vuelta."
       }
     },
     "shortcuts": {
       "fail": {
-	"funcOr": "No se utilizan ni {{{func1}}} ni {{{func2}}}"
+        "funcOr": "No se utilizan ni {{{func1}}} ni {{{func2}}}"
       }
     }
   }
