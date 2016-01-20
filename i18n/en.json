@@ -8,6 +8,7 @@
     "to_reject_or_not_to_reject": "To reject or not to reject",
     "always_async": "Always asynchronous",
     "shortcuts": "Shortcuts",
+    "promise_after_promise": "Promise after promise",
     "values_and_promises": "Values and promises",
     "throw_an_error": "Throw an error",
     "an_important_rule": "An important rule",
@@ -49,6 +50,14 @@
     "shortcuts": {
       "fail": {
         "funcOr": "You didn’t use {{{func1}}} or {{{func2}}}"
+      }
+    },
+    "promise_after_promise": {
+      "pass": {
+        "returnedPromise": "A promise returned from first().then"
+      },
+      "fail": {
+        "returnedPromise": "You did not return a promise from first().then, but instead you returned {{{returned}}}"
       }
     }
   }
