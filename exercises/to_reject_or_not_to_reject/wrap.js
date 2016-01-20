@@ -22,9 +22,7 @@ function wrap(ctx) {
   Promise = function (func) {
     var stack = ctx.$captureStack(Promise);
     var inUserCode = isInUserCode(stack);
-
-    ctx.usedPromise = ctx.usedPromise || inUserCode;
-    return p.call(this, function (fulfill, reject) {
+    var transformedFunc = function (fulfill, reject) {
       func(function (value) {
         ctx.usedFulfill = ctx.usedFulfill || inUserCode;
         fulfill(value);
@@ -36,7 +34,15 @@ function wrap(ctx) {
         ctx.usedRejectWithError = ctx.usedRejectWithError || inUserCode && err instanceof Error;
         reject(err);
       });
-    });
+    };
+
+    ctx.usedPromise = ctx.usedPromise || inUserCode;
+
+    if (this instanceof Promise) {
+      return new p(transformedFunc);
+    } else {
+      return p(transformedFunc);
+    }
   };
 
   savedPrototype = {

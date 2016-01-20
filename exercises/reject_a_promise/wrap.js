@@ -17,18 +17,24 @@ function wrap(ctx) {
   require('es6-promise');
   p = Promise;
 
-  Promise = function (func) {
+  Promise = function Promise(func) {
     var stack = ctx.$captureStack(Promise);
     var inUserCode = isInUserCode(stack);
-
-    ctx.usedPromise = ctx.usedPromise || inUserCode;
-    return p.call(this, function (fulfill, reject) {
+    var transformedFunc = function (fulfill, reject) {
       func(fulfill, function (err) {
         ctx.usedReject = ctx.usedReject || inUserCode;
         ctx.usedRejectWithError = ctx.usedRejectWithError || inUserCode && err instanceof Error;
         reject(err);
       });
-    });
+    };
+
+    ctx.usedPromise = ctx.usedPromise || inUserCode;
+
+    if (this instanceof Promise) {
+      return new p(transformedFunc);
+    } else {
+      return p(transformedFunc);
+    }
   };
 
   savedPrototype = {
