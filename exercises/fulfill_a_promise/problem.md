@@ -1,5 +1,14 @@
 # Fulfilling a Promise
 
+Promises have an important internal property: its state. A promise is one of:
+
+* fulfilled,
+* rejected, or
+* pending, which is the state of a promise waiting to be fulfilled or rejected.
+
+Sometimes you will also hear the term “resolved.” For now, you can treat it as
+meaning either fulfilled or rejected.
+
 Most promises are created with `new Promise(executor)`, in which `executor` is
 a callback function with the signature `function (fulfill, reject)`. Inside
 `executor`, either `fulfill` or `reject` is called, to indicate the outcome of
@@ -25,6 +34,30 @@ If you call `fulfill` function in `executor` without a parameter, the
 callbacks will be `undefined`.
 
 We will talk about rejecting in our next lesson.
+
+## Setup
+
+To use ES2015 Promises, you need either a JavaScript engine that supports it,
+or one of the many polyfills available. Node.js 0.12 or higher, and all
+versions of io.js, have native promise support. However, if you are stuck with
+an older version of Node.js, don’t fret: for this workshopper, a promise
+implementation will be **automatically supplied** if none is available.
+
+When writing your own code, we recommend using `es6-promise` polyfill, since it
+aims to be strictly compliant to ES2015 without any extra features. To use
+`es6-promise`, execute the following in a shell:
+
+```sh
+npm install es6-promise
+```
+
+Then, in the main file in your app, add the following line:
+
+```js
+require('es6-promise');
+```
+
+Now you can use ES2015 promises everywhere!
 
 ## Task
 
