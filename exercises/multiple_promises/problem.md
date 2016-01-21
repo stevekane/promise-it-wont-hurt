@@ -56,6 +56,14 @@ other way, please [file an
 issue](https://github.com/stevekane/promise-it-wont-hurt/issues); I’m
 interested in such a solution!
 
-To those of you who are already familiar with ES2015 promises, you might
-notice that this task is similar to what `Promise.all` can do. Rest assured
-that `Promise.all` is disabled in this lesson 😈
+While this lesson is a good practice for your skills, n real world
+programming, such a task is usually achieved by using `Promise.all` utility
+function, which works by taking an iterable (like an array) of promises. It
+also handles error catching, and any errors will be forwarded.
+
+```js
+Promise.all([getPromise1(), getPromise2()])
+  .then(onFulfilled, onRejected);
+```
+
+In this lesson though, rest assured that that `Promise.all` is disabled 😈
