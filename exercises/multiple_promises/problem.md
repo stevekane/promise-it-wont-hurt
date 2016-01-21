@@ -56,10 +56,11 @@ other way, please [file an
 issue](https://github.com/stevekane/promise-it-wont-hurt/issues); I’m
 interested in such a solution!
 
-While this lesson is a good practice for your skills, n real world
+While this lesson is a good practice for your skills, in real world
 programming, such a task is usually achieved by using `Promise.all` utility
-function, which works by taking an iterable (like an array) of promises. It
-also handles error catching, and any errors will be forwarded.
+function, which we are basically reimplementing. It works by taking an
+iterable (like an array) of promises, rather than separate arguments. It also
+handles error catching, and any errors will be forwarded.
 
 ```js
 Promise.all([getPromise1(), getPromise2()])
