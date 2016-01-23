@@ -22,13 +22,15 @@
         "constr": "Used the Promise constructor",
         "func": "Used {{{func}}} method",
         "funcObj": "Used {{{func}}} method with {{{type}}} object",
-        "funcAfter": "Used {{{after}}} method after calling {{{before}}}"
+        "funcAfter": "Used {{{after}}} method after calling {{{before}}}",
+        "createdAndUsedFunc": "Created and used {{{func}}} method"
       },
       "fail": {
         "constr": "You didn’t use the Promise constructor",
         "func": "You didn’t use {{{func}}} method",
         "funcObj": "You used {{{func}}} method with non-{{{type}}}",
-        "funcAfter": "You used {{{after}}} method before calling {{{before}}}"
+        "funcAfter": "You used {{{after}}} method before calling {{{before}}}",
+        "createdAndUsedFunc": "You didn’t create or didn’t use {{{func}}} method"
       }
     }
   },
@@ -58,6 +60,14 @@
       },
       "fail": {
         "returnedPromise": "You did not return a promise from first().then, but instead you returned {{{returned}}}"
+      }
+    },
+    "values_and_promises": {
+      "pass": {
+        "returnedSync": "A value returned from attachTitle()"
+      },
+      "fail": {
+        "returnedSync": "You returned a promise from attachTitle(). Return a value instead."
       }
     },
     "multiple_promises": {

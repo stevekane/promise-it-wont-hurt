@@ -1,12 +1,9 @@
-var q = require('q')
-  , def = q.defer();
+'use strict';
 
-function attachTitle (name) {
-  return "DR. " + name;
+function attachTitle(name) {
+  return 'DR. ' + name;
 }
 
-def.promise
-.then(attachTitle)
-.then(console.log);
-
-def.resolve("MANHATTAN");
+Promise.resolve('MANHATTAN')
+  .then(attachTitle)
+  .then(console.log);
