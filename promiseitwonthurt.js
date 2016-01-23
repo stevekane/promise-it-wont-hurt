@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const workshopper = require('@timothygu/workshopper')
+const workshopper = require('workshopper')
     , path        = require('path')
 
 fpath = path.join.bind(null, __dirname)
