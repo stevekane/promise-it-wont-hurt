@@ -29,7 +29,8 @@ If the execution of promise is synchronous, the value of the promise is already
 known after its construction. The `console.log` passed into `then` would then
 be executed as soon as the `then` is called.
 
-However, if your script is successful, you should see “MAIN PROGRAM” before “SECOND”.
+However, if your script is successful, you should see “MAIN PROGRAM” before
+“PROMISE VALUE”.
 
 This shows you that despite the promise being resolved synchronously, the
 provided function is not executed until the next turn of the event loop.
