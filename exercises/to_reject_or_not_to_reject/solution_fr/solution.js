@@ -1,6 +1,12 @@
-var q = require('q')
-  , def = q.defer();
+'use strict';
 
-def.promise.then(console.log, console.log);
-def.resolve("J'AI ETE APPELEE");
-def.reject("MOI PAS");
+var promise = new Promise(function (fulfill, reject) {
+  fulfill("J'AI ETE APPELEE");
+  reject(new Error("JE N'AI PAS ETE APPELEE"));
+});
+
+function onReject (error) {
+  console.log(error.message);
+}
+
+promise.then(console.log, onReject);
