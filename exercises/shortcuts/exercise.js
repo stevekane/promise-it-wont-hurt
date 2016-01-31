@@ -9,12 +9,6 @@ var wrappedexec = require('@timothygu/workshopper-wrappedexec');
 // checks that the submission file actually exists
 exercise = filecheck(exercise);
 
-// don’t check our results: it’s an infinite loop
-exercise.addVerifySetup(function (callback) {
-  this.solution = path.join(this.dir, 'noop.js');
-  process.nextTick(callback);
-});
-
 // execute the solution and submission in parallel with spawn()
 exercise = execute(exercise);
 
