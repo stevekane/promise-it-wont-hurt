@@ -1,4 +1,4 @@
-# Can you do what `async` does?
+# Can you do what Async.js does?
 
 When doing asynchronous programming you will often want to perform multiple
 operations in parallel. In some cases you may wish to delay further processing
