@@ -6,8 +6,8 @@ function capitalize(str) {
 
 function wrap(ctx) {
   /* eslint-disable no-extend-native, no-param-reassign, no-native-reassign, no-undef */
-  var p;
   var savedPrototype;
+  var savedClassMethods;
 
   function isInUserCode(stack) {
     return stack[0].getFileName().substring(0, ctx.mainProgram.length)
@@ -15,12 +15,11 @@ function wrap(ctx) {
   }
 
   require('es6-promise');
-  p = Promise;
 
   savedPrototype = {};
 
   ctx.usedPrototypeCatch = false;
-  savedPrototype.catch = p.prototype.catch;
+  savedPrototype.catch = Promise.prototype.catch;
 
   Promise.prototype.catch = function (onRejected) {
     var stack = ctx.$captureStack(Promise.prototype.catch);
@@ -31,10 +30,13 @@ function wrap(ctx) {
     return savedPrototype.catch.apply(this, arguments);
   };
 
+  savedClassMethods = {};
+
   ['reject', 'resolve'].forEach(function (f) {
     var capF = capitalize(f);
 
-    if (typeof p[f] === 'function') {
+    if (typeof Promise[f] === 'function') {
+      savedClassMethods[f] = Promise[f];
       ctx['usedPromise' + capF] = false;
 
       Promise[f] = function () {
@@ -43,7 +45,7 @@ function wrap(ctx) {
 
         ctx['usedPromise' + capF] = ctx['usedPromise' + capF] || inUserCode;
 
-        return p[f].apply(this, arguments);
+        return savedClassMethods[f].apply(this, arguments);
       };
     }
   });
