@@ -32,7 +32,7 @@ doSomethingRisky()
 
 Allez, on se fait exactement ce dont on vient de parler.
 
-On va vous transmettre du JSON invlide dans `process.argv[2]`.
+On va vous transmettre du JSON invalide dans `process.argv[2]`.
 
 1. Écrivez une fonction appelée `parsePromised` qui crée une promesse,
     fait un `JSON.parse` là-dessus au sein d’un bloc `try`/`catch`, et
