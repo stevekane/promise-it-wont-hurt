@@ -1,6 +1,14 @@
-var q = require('q')
-  , def = q.defer();
+'use strict';
 
-def.promise.then(console.log, console.log);
-def.resolve("J'AI ETE APPELEE");
-def.reject("MOI PAS");
+/* global first, second */
+
+var firstPromise = first();
+
+var secondPromise = firstPromise.then(function (val) {
+  return second(val);
+});
+
+secondPromise.then(console.log);
+
+// Une autre possibilité aurait été :
+// first().then(second).then(console.log);
