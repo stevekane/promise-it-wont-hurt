@@ -2,7 +2,7 @@
 
 **Non !**  Les gestionnaires d’accomplissement peuvent renvoyer
 des promesses **ou** des valeurs.  Toute implémentation qui respecte
-la spécification Promises/A+ aura la bonne réaction et enrobera votre
+la spécification ES2015 aura la bonne réaction et enrobera votre
 valeur retournée dans une promesse, si besoin est.  C’est une
 fonctionnalité assez géniale car elle vous permet de mélanger des
 valeurs et des promesses dans la même chaîne.
@@ -34,16 +34,11 @@ succès qu’au **prochain** tour de la boucle d’événements.
 
 ## Tâche
 
-Construisez une chaîne de promesses qui renvoie des **valeurs** pour vous
-prouver que les gestionnaires de promesse vont les enrober automatiquement
-dans des promesses, ce qui permet du chaînage supplémentaire.
-
-1. Construisez une promesse à l’aide u `defer()` de Q.
-2. Construisez une fonction `attachTitle` qui préfixe son premier argument
+1. Construisez une fonction `attachTitle` qui préfixe son premier argument
     avec le texte `"DR. "` et renvoie le résultat.
-3. Construisez une chaîne de promesses à partir de celle créée initialement, qui
+2. Construisez une promesse accomplie avec la valeur `'MANHATTAN'`.
+3. Construisez une chaîne de promesses à partir de celle-ci, qui
     appellerait d’abord `attachTitle` puis `console.log`.
-4. Accomplissez la promesse de base avec la valeur `"MANHATTAN"`.
 
 Si votre programme est correct, il devrait afficher « DR. MANHATTAN », ce qui
 roxxe quand même des poneys magiques.
