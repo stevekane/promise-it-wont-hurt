@@ -6,7 +6,7 @@ remonter à travers la pile jusqu’à être attrapée par un bloc
 `catch` ou arriver au contexte global, auquel cas elle sera
 levée à nouveau.
 
-Dan le code ci-dessous, chaque expression est évaluée l’une
+Dans le code ci-dessous, chaque expression est évaluée l’une
 après l’autre.  Si une expression lève une exception, **toutes
 les expressions ultérieures seront ignorées** et le bloc `catch`
 la rattrapera pour la gérer.

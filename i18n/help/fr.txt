@@ -5,16 +5,11 @@ servir tant dans le navigateur que dans du JS côté serveur.
 Ce module est basé sur le module `workshopper` extrait à l’origine de
 `stream-adventure`.
 
-Ce module utilise lourdement le module `q`, que tu peux retrouver ici :
+Ce module était à l’origine basé sur Q, mais a depuis évolué pour
+n’utiliser que les promesses ES2015.
 
-  https://github.com/kriskowal/q
-
-Par ailleurs, au bout d’un moment les leçons utilisent le module `q-io`,
-que tu peux retrouver ici :
-
-  https://github.com/kriskowal/q-io
-
-Certains modules populaires de promesses sont listés ci-dessous :
+Il existe d’autres modules populaires de promesses, qui sont plus ou moins
+compatibles avec les ES2015, par exemple :
 
   https://github.com/petkaantonov/bluebird
   https://github.com/tildeio/rsvp.js

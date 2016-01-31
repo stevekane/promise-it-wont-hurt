@@ -1,66 +1,90 @@
-# Qu’est-ce qu’une promesse ?
+# Accomplir une promesse
 
-Une promesse est un objet qui définit une méthode appelée `then`.
-L’objet promesse représente une valeur (ou plusieurs valeurs) qui
-peuvent n’être disponibles que plus tard dans l’exécution.
+Les promesses ont une propriété interne très importante : leur état.  Une
+promesse peut être dans l’un des états suivants :
 
-Quand une promesse est accomplie, toute *"fonction de succès"*
-enregistrée via la méthode `then` sera appelée avec les données
-fraîchement disponibles comme argument.
+* accomplie
+* rejetée, ou
+* en attente, c’est-à-dire qu’elle n’est pas établie (elle n’est ni
+   accomplie ni rejetée)
 
-Quand une promesse rejette, toute *"fonction d’échec"* enregistrée
-via la méthode `then` sera appelée avec l’`Error` comme argument.
+Vous entendrez parfois le terme « résolue » (*resolved*).  Pour ce qui
+nous concerne, considérez que cela signifie « accomplie ».
 
-Pour le moment, ne vous souciez pas trop de savoir **comment** ça
-marche, ou à quoi ressemble la syntaxe.  Nous allons explorer tout ça
-en détail au fil des exercices.
+La plupart des promesses sont créées à l’aide du constructeur
+`new Promise(executor)`, dans lequel `executor` est une fonction de rappel
+avec la signature `function (fulfill, reject)`.  À l’intérieur de celle-ci,
+on appellera soit `fulfill` soit `reject`, pour indiquer l’aboutissement de
+l’opération.  Pour les promesses, l’accomplissement signifie que l’opération
+a abouti avec succès, et produit une valeur.  Afin de transmettre cette
+valeur au monde extérieur, on la passe en premier (et unique) argument de
+`fulfill`.
+
+Comme indiqué dans la leçon précédente, une promesse a une méthode `then`.
+Elle constitue la principale façon de manipuler les promesses et leurs
+valeurs.  Elle prend comme paramètres deux fonctions de rappels, toutes deux
+optionnelles : `onFulfilled` et `onRejected`.  La première sera appelée si
+la promesse s’accomplit, la seconde si la promesse rejette.  Lorsque le
+code de `executor` appelle la fonction `fulfill` qu'il a reçu, la machinerie
+de la promesse la transmet jusqu'à appeler la première fonction de rappel
+fournie à `then`, avec cette même valeur.
+
+En pratique, vous pouvez appeler la méthode `then` plusieurs fois, pour
+effectuer plusieurs traitements distincts sur la valeur d’une promesse.
+Plus fréquemment, vous les ferez tous dans la même fonction de rappel
+`onFulfilled`, ce qui vous permettra de les articuler plus subtilement.
+
+Si, depuis le code de `executor`, vous appelez la fonction de rappel
+`fulfill` sans argument, les fonctions de rappels `onFulfilled` seront
+toujours appelées, mais leur argument sera `undefined`.
+
+Nous parlerons des cas de rejet dans la prochaine leçon.
 
 ## Mise en place
 
-Pour la plupart des leçons de cet atelier, vous aurez besoin d’une version de Node.js qui prenne en charge les promesses de ECMAScript 6.  Il s’agit de Node.js 0.12 ou supérieur, et de toutes les versions de io.js.
+Pour utiliser les promesses ES2015, il vous faudra un moteur JavaScript
+qui les prenne en charge, ou un des nombreux *polyfills* disponibles.
+Node 0.12 et supérieur, ainsi que les quelques versions de io.js, ont toutes
+cette prise en charge native.  Toutefois, si vous êtes coincé-e sur une
+version trop ancienne de Node.js, ne vous inquiétez pas : pour cet atelier,
+une implémentation des promesses sera **automatiquement fournie** si le
+moteur n’en propose pas.
 
-Pour déterminer si votre version de Node.js prend nativement en charge les promesses, exécutez le test suivant dans une REPL Node.js :
-
-```js
-typeof Promise !== "undefined"
-```
-
-Si la REPL vous indique `true`, alors vous êtes paré-e !  Dans le cas contraire, vous devrez utiliser un des nombreux *shims* (émulations) implémentés par la communauté.  Pour cet atelier, nous recommandons `es6-promise`, qui vise à être strictement conforme à ES6 sans rien ajouter par-dessus.  Pour utiliser `es6-promise`, exécutez la commande suivante dans un terminal, de préférence dans le dossier de votre atelier :
+Lorsque vous écrirez votre propre code, si vous n’avez pas les promesses
+natives à disposition, nous vous recommandons le *polyfill* `es6-promise`,
+qui fournit une émulation strictement conforme de la version native, sans
+aucune fioriture.  Pour l'utilisez, vous n'aurez qu'à l'installer en tapant
+la commande suivante :
 
 ```sh
 npm install es6-promise
 ```
 
-Puis, au début de chaque programme que vous écrirez pour cet atelier, ajoutez :
+Puis, dans le code de votre application, vous n'aurez qu’à faire :
 
 ```js
-var Promise = require('es6-promise').Promise
+var Promise = require('es6-promise').Promise;
 ```
 
-Et voilà, vous pouvez utiliser les promesses ES6 !
+Ainsi vous pourrez utiliser des promesses ES2015 partout !
 
 ## Tâche
 
-Créez une promesse ES6.
+Créez une promesse, puis accomplissez-la avec la valeur `'ACCOMPLIE !'`
+depuis le code de `executor`, après un délai de 300 ms obtenu grâce à
+`setTimeout`.
 
-Passez `console.log` à la méthode `then` de votre promesse.
-
-Accomplissez la promesse manuellement au sein d’un `setTimeout` avec un délai de 300ms, en lui passant le paramètre `"RESOLU !"`.
-
-## Conseils
-
-On crée une promesse avec `new Promise(cb)`, dans laquelle `cb` est une fonction de rappel avec la signature `function(fulfill, reject)`.  Selon que la promesse s’accomplira ou rejettera, vous appelerez depuis le code de la fonction de rappel soit `fulfill` soit `reject`.
-
-On dit qu’une promesse s’accomplit (on parle parfois de résolution) lorsqu’elle réussit à produire une valeur résultat, laquelle est alors passée en argument à `fulfill`.
-
-Comme indiqué plus haut, une promesse a une méthode `then`.  Celle-ci accepte deux fonctions de rappel optionnelles en arguments, la première en cas d’accomplissement, la seconde en cas de rejet.  Pour le moment, concentrons-nous sur la première.  Elle sera appelée avec la même valeur que celle que vous aurez passée à `fulfill`, ce qui nous permet de traiter la valeur d’accomplissement d’une promesse.
+Ensuite, affichez la valeur de la promesse après accomplissement en la
+passant à `console.log` depuis votre fonction de rappel passée à `then`.
 
 ## Base de travail
 
 ```js
-var promise = new Promise(function(fulfill, reject) {
-  // Votre solution ici…
+'use strict';
+
+var promise = new Promise(function (fulfill, reject) {
+  // Votre solution ici
 });
 
-// …et ici
+// Votre solution ici
 ```

@@ -1,46 +1,98 @@
-# Que se passe-t-il si on rejette ET on accomplit une promesse ?
+# Enchaînement de promesses
 
-La spécification **Promises/A+** stipule qu’une promesse, une fois accomplie
-ou rejetée, ne **peut pas** changer d’état pour le restant de sa vie.  C’est
-un aspect critique des promesses et c’est aussi une des différences-clés avec
-un `EventEmitter` (ou toute autre forme de fonctions de rappel qui peuvent
-être répétées).
+Jusqu’ici, vous avez traité l’accomplissement et le rejet de promesses,
+mais vos gestionnaires ont toujours été des traitements synchrones, comme
+l’affichage de texte.  Que se passerait-il si vous vouliez effectuer des
+traitements asynchrones ?
 
-Le code à base de fonctions de rappel requiert généralement que la fonction
-de rappel en question soit appelée quelque part au sein du code auquel on la
-passe.  Souvent, même si pas toujours, cette fonction n’est censée être appelée
-qu’une seule fois.  Toutefois, au travers d’erreurs de logique, de soucis de
-syntaxe ou d’autres bévues faciles à faire, il reste possible d’appeler la
-fonction de rappel plusieurs fois, ce qui crée des états pénibles dans votre
-application et engendre des bogues bien fourbes.
+Reprenons l’exemple de la première leçon.
 
 ```js
-/*
-Le code ci-dessous est problématique, et néanmoins fréquent, et a le sale
-effet de bord d’appeler la fonction de rappel plus d’une fois (au risque de
-détruire la planète ?).  L’usage eut qu’on `return` sur la première invocation
-de la fonction de rappel, mais il est facile de l’oublier !
-*/
-
-var function (user, callback) {
-  if (user) {
-    callback(null, user);
+Parse.User.logIn('user', 'pass', {
+  success: function (user) {
+    query.find({
+      success: function (results) {
+        results[0].save({ key: value }, {
+          success: function (result) {
+            // l’objet a bien été sauvé
+          }
+        });
+      }
+    });
   }
-  return callback(new Error("Aucun utilisateur trouvé"), null);
-}
+});
 ```
+
+Alors, si les trois fonctions renvoyaient des promesses, on pourrait
+transformer ce code en ceci :
+
+```js
+Parse.User.logIn('user', 'pass').then(function (user) {
+  query.find().then(function (results) {
+    results[0].save({ key: value }).then(function (result) {
+      // l’objet a bien été sauvé
+    });
+  });
+});
+```
+
+C’est déjà beaucoup mieux : la boiteuse option `success` a été remplacée.
+Néanmoins, le schéma détestable du « Callback Hell » est toujours là : si
+nous voulons faire davantage que ces trois traitements, le code va enfler
+assez rapidement.
+
+Pour résoudre ce problème, les promesses nous permettent de **renvoyer une
+autre promesse** depuis les fonctions de rappel de `then`.  La nouvelle
+promesse ainsi renvoyée sera celle renvoyée par `then`, de sorte que vous
+pouvez enchaîner une fois les deux traitements terminés.  Par exemple, le
+code ci-avant peut être réécrit comme suit :
+
+```js
+var originalPromise = Parse.User.logIn('user', 'pass');
+
+var findPromise = originalPromise.then(function (user) {
+  // À ce stade, l’identification est faite
+
+  // query.find() renvoie une autre promesse, qui deviendra `findPromise`
+  return query.find();
+});
+
+var savePromise = findPromise.then(function (results) {
+  // Et maintenant, la requête de recherche est terminée
+
+  // La promesse renvoyée par `save` deviendra `savePromise`
+  return results[0].save({ key: value });
+});
+
+savePromise.then(function (result) {
+  // l’objet a bien été sauvé
+});
+```
+
+Et on peut simplifier tout ça ainsi :
+
+```js
+Parse.User.logIn('user', 'pass').then(function (user) {
+  return query.find();
+}).then(function (results) {
+  return results[0].save({ key: value });
+}).then(function (result) {
+  // l’objet a bien été sauvé
+});
+```
+
+C’est déjà beaucoup plus élégant, non ?
 
 ## Tâche
 
-Créons un script simple pour nous **prouver** que les promesses ne peuvent
-être résolues (rejetées ou accomplies) qu’une fois, et que toute tentative
-ultérieure sera simplement ignorée.
+Cette tâche va vous permettre de démontrer une compréhension des enchaînements
+de promesses à l’aide de `then`.
 
-1. Créez une promesse avec `Q.defer()`
-2. Passez `console.log` comme premier **et** second argument à la méthode
-    `then` de votre promesse
-3. Accomplissez la promesse avec une valeur de `"J'AI ETE APPELEE"`
-4. Rejetez la promesse avec une valeur de `"MOI PAS"`
+Appelez la fonction `first` dans votre programme. `first()` renverra une promesse
+qui sera accomplie avec une valeur secrète.
 
-Si vous avez bien fait le travil, votre script devrait uniquement afficher
-"J'AI ETE APPELEE", et ne devrait donc **pas** afficher "MOI PAS".
+Appelez la fonction `second` avec la valeur accomplie par `first`.  Renvoyez la
+promesse ainsi obtenue, depuis votre fonction de rappel `onFulfilled`.
+
+Pour finir, affichez la valeur obtenue par cette dernière promesse à l’aide de
+`console.log`.

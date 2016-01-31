@@ -1,5 +1,3 @@
-var q = require('q');
-
 function iterate (num) {
   console.log(num);
   return ++num;
@@ -9,7 +7,7 @@ function alwaysThrows () {
   throw new Error("OH NOES");
 };
 
-q.fcall(iterate, 1)
+Promise.resolve(iterate(1))
 .then(iterate)
 .then(iterate)
 .then(iterate)

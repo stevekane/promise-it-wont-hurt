@@ -1,17 +1,13 @@
-var q = require('q');
+'use strict'
 
 function parsePromised (json) {
-  var def = q.defer()
-    , result;
-
-  try {
-    result = JSON.parse(json);
-  } catch (e) {
-    def.reject(e);
-  }
-
-  def.resolve(result);
-  return def.promise;
+  return new Promise(function (fulfill, reject) {
+    try {
+      fulfill(JSON.parse(json));
+    } catch (e) {
+      reject(e);
+    }
+  });
 };
 
 parsePromised(process.argv[2])

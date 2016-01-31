@@ -1,4 +1,4 @@
-# Peut-on faire ce que fait `async` ?
+# Peut-on faire ce que fait Async.js ?
 
 Lorsqu’on programme en asynchrone, on a souvent besoin d’exécuter
 plusieurs opérations en parallèle.  Dans certains cas, vous voudrez
@@ -30,46 +30,39 @@ getAll([fetch(1), fetch(2)])
 
 Écrivons cette fonction !
 
-1) Construisez deux promesses à l’aide du `defer()` de Q ;
-2) Écrivez une fonction `all` qui accepte deux promesses comme arguments ;
-   Votre fonction doit :
+Créez une fonction `all` qui prend deux promesses en arguments.  Cette
+fonction `all` devrait fonctionner comme suit :
 
-  a) Créer une promesse interne avec `defer()` et la renvoyer !
-  b) Créer une variable `counter` initialisée à `0`.
-  c) Attacher des gestionnaires de succès `then` pour chaque promesse transmise,
-     et y incrémenter le compteur interne ;
-  d) **Seulement** quand le compteur atteint 2, accomplir la promesse interne
-     avec comme valeur un tableau des deux valeurs obtenues par les promesses
-     passées.
-  e) **Mais aussi** attacher des gestionnaires de rejet à chaque promesse passée,
-     qui rejettent la promesse interne !
+  - Créer une promesse interne comme bon vous semble
+  - Créer une variable `counter` initialisée à zéro
+  - Attacher des gestionnaires d’accomplissement au deux promesses, et
+     incrémenter le compteur interne au sein de ces gestionnaires
+  - Quand le compteur atteint 2, accomplir la promesse interne avec un
+     tableau des **deux** valeurs accomplies
+  - Pour finir, renvoyer la promesse interne
 
-3) Passez vos deux promesses à votre fonction, et attachez un `console.log`
-   comme gestionnaire d’accomplissement pour la promesse que votre fonction
-   aura retournée.
-4) Dans un `setTimeout` avec un délai de 200ms, accomplissez la première promesse
-   avec la valeur « LES PROMESSES » et la deuxième avec la valeur « ROXXENT ».
+Quand vous aurez fini d’écrire `all`, passez-lui `getPromise1()` et
+`getPromise2()`, et attachez un `console.log` comme gestionnaire
+d’accomplissement à la promesse renvoyée.  Les deux fonctions
+mentionnées seront mises à votre disposition dans la portée globale.
 
-**ASTUCE :** N’oubliez pas de passer les propriétés `promise` de vos *deferred* !
+## Conseils
 
-Si votre code est correct, il devrait afficher `["LES PROMESSES", "ROXXENT"]`,
-ce qui après tout n’est qu’une opinion parmi d’autres, hein…
+Vous souhaiterez sans doute utiliser le bon vieux constructeur `Promise` ici.
+Si vous trouvez une autre façon, n’hésitez pas à [nous le signaler](https://github.com/stevekane/promise-it-wont-hurt/issues) ;
+je serais curieux de voir vos solutions !
 
-## Bonus
+Même si cette leçon est un bon exercice pratique, dans la vraie vie vous
+utiliserez plutôt `Promise.all`, dont nous réimplémentons ici une version
+réduire.  `Promise.all` prend un itérable (par exemple un tableau) de
+promesses en argument unique, plutôt que des arguments distincts.  Par
+ailleurs, elle gère les erreurs et transmet toute erreur interne en rejet
+de la promesse renvoyée.
 
-Essayez d’utiliser la méthode `all()` de Q pour remplacer votre fonction.
-Remarquez que leur version s’attend à un **tableau** de promesses, pas à des
-arguments individuels.
+```js
+Promise.all([getPromise1(), getPromise2()])
+  .then(onFulfilled, onRejected);
+```
 
-## Super Bonus
-
-Essayez d’utiliser la fonction `spread()` de Q pour remplacer votre gestionnaire
-`then` sur la promesse renvoyée par `all()`.  Remarquez que `spread` transmettra
-des arguments individuels, ce qui devrait légèrement modifier votre affichage
-final !
-
-`Q.all`, `.spread` et consorts ne sont que quelques-unes des facilités que vous
-trouverez dans de nombreuses bibliothèques de promesses, mais qu’il reste facile
-de construire nous-mêmes.  La composabilité des promesses (puisque ce sont des
-objets réifiés) est un énorme avantage, et on peut rapidement découvrir des
-approches extraordinaires pour constuire des systèmes asynchrones.
+Dans cette leçon toutefois, nous avons pris soin de désactiver cette
+méthode utilitaire 😈
