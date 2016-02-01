@@ -26,6 +26,7 @@
     "@timothygu/workshopper-wrappedexec": "^0.1.4",
     "es6-promise": "^3.0.2",
     "node-uuid": "~1.4.1",
+    "q-io": "^1.13.2",
     "random-word": "^1.0.2",
     "shasum": "^1.0.2",
     "workshopper-exercise": "^2.3.0",
