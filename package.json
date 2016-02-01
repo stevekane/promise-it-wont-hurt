@@ -1,6 +1,6 @@
 {
   "name": "promise-it-wont-hurt",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "This is a Workshop module for learning about promises in node.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
