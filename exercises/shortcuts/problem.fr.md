@@ -5,8 +5,8 @@ création et la manipulation des promesses.
 
 Le premier est `.catch`.  Jusqu’ici nous avons appris à gérer le rejet
 d’une promesse -- grâce au second argument de la méthode `.then`.  Toutefois,
-il arrive que vous souhaitiez traiter le rejet, mais pas l'accomplissement.
-Dans de tels cas, puisque la fonction de rappel onFulfilled` est
+il arrive que vous souhaitiez traiter le rejet, mais pas l’accomplissement.
+Dans de tels cas, puisque la fonction de rappel `onFulfilled` est
 optionnelle, vous pouvez passer `null` à la place.  Cependant, il existe une
 manière plus simple d’obtenir le même résultat en utilisant `.catch`.  Au
 lieu d’écrire :
