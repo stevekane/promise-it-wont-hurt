@@ -26,7 +26,7 @@ promise.catch(function (err) {
 });
 ```
 
-This notation also has the benefit of making the easier to understand for
+This notation also has the benefit of making the syntax easier to understand for
 people who do not speak Promises yet, since it is fairly obvious to everyone
 who has done JavaScript programming to understand what `catch` means.
 
