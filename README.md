@@ -6,6 +6,8 @@
 
 [![Dependency Status](https://img.shields.io/david/stevekane/promise-it-wont-hurt.svg)](https://david-dm.org/stevekane/promise-it-wont-hurt#info=dependencies)
 
+![Promise it won't hurt](https://raw.github.com/stevekane/promise-it-wont-hurt/master/promise-it-wont-hurt.png)
+
 ## Mission
 
 Promises offer a very powerful abstraction for obtaining values asynchronously.  
@@ -90,9 +92,6 @@ $ promise-it-wont-hurt verify mysolution.js
 ## Stuck?
 
 Feedback and criticism is welcome, please log your troubles in [issues](https://github.com/stevekane/promise-it-wont-hurt/issues). 
-
-## Screenshots
-![Promise it won't hurt](https://raw.github.com/stevekane/promise-it-wont-hurt/master/promise-it-wont-hurt.png)
 
 ## Thanks rvagg
 
