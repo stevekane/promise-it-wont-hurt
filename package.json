@@ -24,11 +24,15 @@
   "dependencies": {
     "@timothygu/workshopper": "^2.7.4",
     "@timothygu/workshopper-wrappedexec": "^0.1.4",
+    "chalk": "^1.1.3",
     "es6-promise": "^3.0.2",
     "node-uuid": "~1.4.1",
     "q-io": "^1.13.2",
     "random-word": "^1.0.2",
     "shasum": "^1.0.2",
+    "split": "^1.0.0",
+    "through2": "^2.0.1",
+    "tuple-stream": "0.0.2",
     "workshopper-exercise": "^2.3.0",
     "workshopper-timer": "^1.0.0"
   },
