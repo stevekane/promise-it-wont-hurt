@@ -18,8 +18,8 @@ exercise = execute(exercise)
 
 // compare stdout of solution and submission
 exercise.addProcessor(function (mode, callback) {
-  let outputStream = through2.obj(function (chunk) {
-    const result = chunk[0] === chunk[1]
+  var outputStream = through2.obj(function (chunk) {
+    var result = chunk[0] === chunk[1]
     if (!result) {
       outputStream.push(chalk.yellow(repeat('\u2500', 80)) + '\n')
       outputStream.push('actual: ' + chalk.red(chunk[0]) + '\n')
