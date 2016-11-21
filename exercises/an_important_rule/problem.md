@@ -48,8 +48,8 @@ Many promise libraries try to ameliorate this problem for you
 by providing a `done` handler that simply handles any uncaught
 errors.  The rule of thumb is this:
 
-> If you are **not** returning a value from your promise to a caller,
-> then attach a `done` handler to guard against uncaught exceptions.
+*If you are **not** returning a value from your promise to a caller,
+then attach a `done` handler to guard against uncaught exceptions.*
 
 An example is shown below:
 
