@@ -30,6 +30,8 @@ Pour rappel de la leçon précédente, la méthode `then` d’une promesse prend
 deux fonctions de rappel optionnelles : la première est appelée quand la
 promesse s’accomplit, la seconde quand elle rejette.
 
+Pour plus de détails à propos des objets `Error`, veuillez consulter la [documentation du MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) 
+
 ## Base de travail
 
 ```js
