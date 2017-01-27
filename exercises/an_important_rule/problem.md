@@ -67,6 +67,7 @@ of functions that **all** print to the console.
 
 1. Create a function `alwaysThrows` that throws an `Error` with
    text `"OH NOES"`;
+   **Note:** return the error message
 2. Create a function `iterate` that prints the first argument
    (an integer) to it and then returns that argument + 1;
 3. Create a promise chain that wraps your iterate method using Q's
