@@ -4,7 +4,7 @@ function iterate (num) {
 };
 
 function alwaysThrows () {
-  throw new Error("OH NOES");
+  throw new Error("OH NOES").message;
 };
 
 Promise.resolve(iterate(1))
