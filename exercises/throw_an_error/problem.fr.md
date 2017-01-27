@@ -38,5 +38,6 @@ On va vous transmettre du JSON invalide dans `process.argv[2]`.
     fait un `JSON.parse` là-dessus au sein d’un bloc `try`/`catch`, et
     accomplit ou rejette la promesse selon qu’il y a une erreur levée ou non.
     **Note :** votre fonction devrait renvoyer la promesse de façon synchrone !
+    **Note:**  a propos du traitement d'une erreur, il suffit d'imprimer le message
 2. Construisez une séquence d’étapes comme celle ci-dessus, qui capture toute
     erreur levée et la logue dans la console.
