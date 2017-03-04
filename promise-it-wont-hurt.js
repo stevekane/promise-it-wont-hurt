@@ -10,7 +10,7 @@ var fpath = path.join.bind(null, __dirname);
 workshopper({
   name: 'promise-it-wont-hurt',
   appDir: __dirname,
-  languages: ['en', 'es', 'fr'],
+  languages: ['en', 'es', 'fr', 'ja'],
   helpFile: fpath('./i18n/help/{lang}.txt'),
   menu: {
     bg: 'red',

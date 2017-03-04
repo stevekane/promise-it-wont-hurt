@@ -1,0 +1,18 @@
+Promise It Won’t Hurt へようこそ！-- ブラウザとサーバーサイドJavaScriptの両方で Promise を効果的に使用する方法を説明する独習ワークショップです。
+
+このモジュールは、元々stream-adventureから抽出されたworkshopperモジュール上に構築されています。
+
+このワークショップはもともと Qライブラリの紹介用として作成されたものですが、ES2015 Promise版に進化しました。
+
+ES2015 と多少の互換性があり、ポピュラーないくつかの他の Promise モジュールが以下になります:
+
+https://github.com/petkaantonov/bluebird
+https://github.com/tildeio/rsvp.js
+
+issue、提案、フィードバックはこちら
+
+https://github.com/stevekane/promise-it-wont-hurt/issues
+
+他にも素晴らしいワークショップがあります：
+
+http://nodeschool.io
