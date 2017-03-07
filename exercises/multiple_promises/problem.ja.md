@@ -12,7 +12,7 @@ var thingTwo = getThing(2);
 combine(thingOne, thingTwo);
 ```
 
-値をフェッチする非同期処理のリストを渡し、すべてが揃ったらたら、それを使う関数を構築したいと思います。
+値をフェッチする非同期処理のリストを渡し、すべてが揃ったら、それを使う関数を構築したいと思います。
 
 
 ```js
@@ -27,19 +27,19 @@ getAll(fetch(1), fetch(2))
 この関数を作ろう！
 
 2つの Promise を引数として受け取る `all`関数を作成してください。
-この `all`関数は次のすべてを行う必要があります：
+この `all` 関数は次のすべてを行う必要があります：
 
 内部で Promise を作りましょう。方法は問いません。おまかせします。
 
-初期値が 0 の `counter`変数を作りましょう。
+初期値が 0 の `counter` 変数を作りましょう。
 
-両方の Promise に fulfillmentハンドラを接続し、ハンドラが呼び出されると `counter` をインクリメントします。
+両方の Promise に fulfillment ハンドラを接続し、ハンドラが呼び出されると `counter` をインクリメントします。
 
-`counter` が2に達すると、**両方の**Promise の戻り値を含む配列で内部の Promise を fulfill します。
+`counter` が2に達すると、**両方の** Promise の戻り値を含む配列で内部の Promise を fulfill します。
 
-最後に、その内部Promise をユーザに返します。
+最後に、その内部 Promise をユーザに返します。
 
-`all`関数を定義したら、その関数に `getPromise1()` と `getPromise2()` を (引数として) 渡してから、その関数によって返される Promise の fulfillment ハンドラとして `console.log` をアタッチします。
+`all` 関数を定義したら、その関数に `getPromise1()` と `getPromise2()` を (引数として) 渡してから、その関数によって返される Promise の fulfillment ハンドラとして `console.log` をアタッチします。
 (引数の) 2つの Promise を返す関数は、グローバルスコープで提供されます。
 
 

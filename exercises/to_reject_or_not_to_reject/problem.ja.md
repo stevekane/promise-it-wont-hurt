@@ -26,18 +26,18 @@ function myFunc(user, callback) {
 
 ## 課題
 
-Promiseが1回だけ resolve でき、それ以降の resolve の試みはすべて無視されるということを**証明**するための簡単なスクリプトを作成してみましょう。
+Promise が1回だけ resolve でき、それ以降の resolve の試みはすべて無視されるということを**証明**するための簡単なスクリプトを作成してみましょう。
 
 
 まず、これまで通り Promise コンストラクタを使って Promise を作成してください。
 
 その Promise の `executor` で、即座に `'I FIRED'` という値で Promise を fulfill (resolve) してください。
 
-その直後、`I DID NOT FIRE` パラメータで作成された `Error`オブジェクト を使って Promise を reject しようとしてください。
+その直後、`I DID NOT FIRE` パラメータで作成された `Error` オブジェクト を使って Promise を reject しようとしてください。
 
-Promise を作成した後、`error` パラメータを持ち、`console.log` で、その Errorオブジェクトの message を出力する `onRejected` 関数を作成してください。
+Promise を作成した後、`error` パラメータを持ち、`console.log` で、その Error オブジェクトの message を出力する `onRejected` 関数を作成してください。
 
-最後に、(作成した Promiseに) 成功・失敗のハンドラとして、`console.log` と onReject 関数をそれぞれ渡してください。
+最後に、(作成した Promise に) 成功・失敗のハンドラとして、`console.log` と onReject 関数をそれぞれ渡してください。
 
 成功した場合、スクリプトは「I FIRED」だけをログに記録します。「I DID NOT FIRE」は記録**されません**。
 
