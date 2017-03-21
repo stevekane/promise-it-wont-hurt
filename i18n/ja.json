@@ -1,0 +1,82 @@
+{
+  "title": "Promise It Won’t Hurt",
+  "subtitle": "Node.js やブラウザ で Promise を使う方法を学ぼう",
+  "exercise": {
+    "warm_up": "ウォーミングアップ",
+    "fulfill_a_promise": "Promise を満たす (Fulfill)",
+    "reject_a_promise": "Promise を拒否 (Reject) する",
+    "to_reject_or_not_to_reject": "拒否するか、拒否せざるか",
+    "always_async": "常に非同期",
+    "shortcuts": "ショートカット",
+    "promise_after_promise": "Promise に次ぐ Promise",
+    "values_and_promises": "値と Promise",
+    "throw_an_error": "エラーを投げる",
+    "an_important_rule": "重要なルール",
+    "multiple_promises": "複数のプロミス",
+    "fetch_json": "JSONをフェッチしよう",
+    "do_some_work": "最終課題"
+  },
+  "common": {
+    "exercise": {
+      "pass": {
+        "constr": "Used the Promise constructor",
+        "func": "Used {{{func}}} method",
+        "funcObj": "Used {{{func}}} method with {{{type}}} object",
+        "funcAfter": "Used {{{after}}} method after calling {{{before}}}",
+        "createdAndUsedFunc": "Created and used {{{func}}} method"
+      },
+      "fail": {
+        "constr": "You didn’t use the Promise constructor",
+        "func": "You didn’t use {{{func}}} method",
+        "funcObj": "You used {{{func}}} method with non-{{{type}}}",
+        "funcAfter": "You used {{{after}}} method before calling {{{before}}}",
+        "createdAndUsedFunc": "You didn’t create or didn’t use {{{func}}} method"
+      }
+    }
+  },
+  "exercises": {
+    "reject_a_promise": {
+      "fail": {
+        "successHandler": "Almost there! You added a success handler rather than a rejection handler to the promise in the `.then` call. Review the instructions, especially the Hints section.",
+        "noHandlers": "You called `.then` without any callbacks. Review the last lesson on how to use `.then` if you need to."
+      }
+    },
+    "to_reject_or_not_to_reject": {
+      "pass": {
+        "thenBoth": "Used then method with both callbacks specified"
+      },
+      "fail": {
+        "thenBoth": "You didn’t use then method with both callbacks specified"
+      }
+    },
+    "shortcuts": {
+      "fail": {
+        "funcOr": "You didn’t use {{{func1}}} or {{{func2}}}"
+      }
+    },
+    "promise_after_promise": {
+      "pass": {
+        "returnedPromise": "A promise returned from first().then"
+      },
+      "fail": {
+        "returnedPromise": "You did not return a promise from first().then, but instead you returned {{{returned}}}"
+      }
+    },
+    "values_and_promises": {
+      "pass": {
+        "returnedSync": "A value returned from attachTitle()"
+      },
+      "fail": {
+        "returnedSync": "You returned a promise from attachTitle(). Return a value instead."
+      }
+    },
+    "multiple_promises": {
+      "pass": {
+        "inAll": "You called then from function all"
+      },
+      "fail": {
+        "inAll": "You did not call then from function all"
+      }
+    }
+  }
+}
