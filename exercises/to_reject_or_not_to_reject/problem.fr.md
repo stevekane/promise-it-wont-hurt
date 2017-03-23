@@ -24,7 +24,7 @@ application et engendre des bogues bien fourbes.
 
 function myFunc (user, callback) {
   if (user) {
-    callback(null, user);
+    return callback(null, user);
   }
   return callback(new Error("Aucun utilisateur trouvé"), null);
 }
