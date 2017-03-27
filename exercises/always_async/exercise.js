@@ -4,7 +4,7 @@ var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
 var comparestdout = require('workshopper-exercise/comparestdout');
-var wrappedexec = require('@timothygu/workshopper-wrappedexec');
+var wrappedexec = require('workshopper-wrappedexec');
 
 // checks that the submission file actually exists
 exercise = filecheck(exercise);
