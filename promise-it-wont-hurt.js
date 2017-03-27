@@ -2,7 +2,7 @@
 
 'use strict';
 
-var workshopper = require('@timothygu/workshopper');
+var workshopper = require('workshopper');
 var path = require('path');
 
 var fpath = path.join.bind(null, __dirname);
