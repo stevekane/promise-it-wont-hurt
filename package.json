@@ -22,8 +22,8 @@
   "bin": "./promise-it-wont-hurt.js",
   "preferGlobal": true,
   "dependencies": {
-    "@timothygu/workshopper": "^2.7.4",
-    "@timothygu/workshopper-wrappedexec": "^0.1.4",
+    "@tdtsh/workshopper": "^2.7.1",
+    "workshopper-wrappedexec": "^0.1.3",
     "chalk": "^1.1.3",
     "es6-promise": "^3.0.2",
     "node-uuid": "~1.4.1",
@@ -33,7 +33,7 @@
     "split": "^1.0.0",
     "through2": "^2.0.1",
     "tuple-stream": "0.0.2",
-    "workshopper-exercise": "^2.3.0",
+    "workshopper-exercise": "^3.0.1",
     "workshopper-timer": "^1.0.0"
   },
   "devDependencies": {
