@@ -1,31 +1,33 @@
-'use strict';
+function all(promise1, promise2) {
+    var fulfill, reject;
 
-/* global getPromise1, getPromise2 */
+    var p = new Promise((ff, rj) => {
+        fulfill = ff;
+        reject = rj;
+    });
 
-function all(a, b) {
-  return new Promise(function (fulfill, reject) {
     var counter = 0;
     var out = [];
 
-    a.then(function (val) {
-      out[0] = val;
-      counter++;
+    promise1.then((value) => {
+        counter++;
+        arr.push(value);
 
-      if (counter >= 2) {
-        fulfill(out);
-      }
+        if (counter === 2) {
+            fulfill(out);
+        }
     });
 
-    b.then(function (val) {
-      out[1] = val;
-      counter++;
+    promise2.then((value) => {
+        counter++;
+        arr.push(value);
 
-      if (counter >= 2) {
-        fulfill(out);
-      }
-    });
-  });
+        if (counter === 2) {
+            fulfill(out);
+        }
+    })
+
+    return p;
 }
 
-all(getPromise1(), getPromise2())
-  .then(console.log);
+all(getPromise1(), getPromise2()).then(console.log);
