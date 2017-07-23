@@ -5,7 +5,8 @@ function wrap(ctx) {
   var p;
 
   function isInUserCode(stack) {
-    return stack[0].getFileName().substring(0, ctx.mainProgram.length)
+    var filename = stack[0].getFileName();
+    return filename && filename.substring(0, ctx.mainProgram.length)
       === ctx.mainProgram;
   }
 
