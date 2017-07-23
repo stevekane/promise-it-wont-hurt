@@ -85,6 +85,8 @@ That’s quite beautiful, no?
 This task will allow you to demonstrate an understanding how to chain promises
 together using `then`.
 
+There are two global functions, `first` and `second`.
+
 Call `first` function in your program. `first()` will return a promise that
 will be fulfilled with a secret value.
 
