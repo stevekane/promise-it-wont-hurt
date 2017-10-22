@@ -24,4 +24,4 @@ Promise.resolve(iterate(1))
 .then(iterate)
 .then(iterate)
 .then(iterate)
-.then(null, onReject);
+.catch(onReject);
