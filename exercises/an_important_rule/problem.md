@@ -69,8 +69,7 @@ of functions that **all** print to the console.
    text `"OH NOES"`;
 2. Create a function `iterate` that prints the first argument
    (an integer) to it and then returns that argument + 1;
-3. Create a promise chain that wraps your iterate method using Q's
-   `fcall` then a series of iterations that attempts to perform `iterate`
+3. Create a promise chain that wraps your iterate method, then a series of iterations that attempts to perform `iterate`
    a total of 10 times.
 4. Attach `console.log` as a rejection handler at the bottom of your
    chain.
