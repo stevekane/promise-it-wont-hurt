@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-function parsePromised (json) {
+function parsePromised(json) {
   return new Promise(function (fulfill, reject) {
     try {
       fulfill(JSON.parse(json));
@@ -8,7 +8,11 @@ function parsePromised (json) {
       reject(e);
     }
   });
-};
+}
+
+function onReject(error) {
+  console.log(error.message);
+}
 
 parsePromised(process.argv[2])
-.then(null, console.log)
+.then(null, onReject);
