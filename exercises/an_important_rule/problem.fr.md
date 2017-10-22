@@ -74,6 +74,7 @@ de fonctions qui affichent **toutes** dans la console.
 
 1. Écrivez une fonction `alwaysThrows` qui lève une `Error` avec le texte
     « OH NOES » ;
+    **Note :** Renvoie le message d'erreur
 2. Écrivez une fonction `iterate` qui affiche son premier argument (un
     nombre entier) et le renvoie augmenté de 1 ;
 3. Construisez une chaîne de promesses qui enrobe votre fonction `iterate`
