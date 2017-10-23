@@ -8,7 +8,7 @@ Let us refer back to the example we used in the first lesson.
 
 ```js
 Parse.User.logIn('user', 'pass', {
-  success: function (user) {
+  success: function (query) {
     query.find({
       success: function (results) {
         results[0].save({ key: value }, {
@@ -26,7 +26,7 @@ Now, if all three functions return promises, you should be able to translate
 this code into:
 
 ```js
-Parse.User.logIn('user', 'pass').then(function (user) {
+Parse.User.logIn('user', 'pass').then(function (query) {
   query.find().then(function (results) {
     results[0].save({ key: value }).then(function (result) {
       // the object was saved
@@ -47,7 +47,7 @@ the actions are done. For example, the above code can be replaced by:
 ```js
 var originalPromise = Parse.User.logIn('user', 'pass');
 
-var findPromise = originalPromise.then(function (user) {
+var findPromise = originalPromise.then(function (query) {
   // At this point, you have logged in.
 
   // query.find() returns another promise, which will become `findPromise`
@@ -69,7 +69,7 @@ savePromise.then(function (result) {
 which can then be simplified to:
 
 ```js
-Parse.User.logIn('user', 'pass').then(function (user) {
+Parse.User.logIn('user', 'pass').then(function (query) {
   return query.find();
 }).then(function (results) {
   return results[0].save({ key: value });
@@ -85,10 +85,13 @@ That’s quite beautiful, no?
 This task will allow you to demonstrate an understanding how to chain promises
 together using `then`.
 
-Call `first` function in your program. `first()` will return a promise that
+Two functions will be provided as global functions that you can use: `first`
+and `second`.
+
+Call the `first` function in your program. `first()` will return a promise that
 will be fulfilled with a secret value.
 
-Call `second` with the fulfilled value of `first`. Return the promise returned
+Call the `second` with the fulfilled value of `first`. Return the promise returned
 by `second` in your `onFulfilled` callback.
 
 Finally, print the fulfilled value of that new promise with `console.log`.

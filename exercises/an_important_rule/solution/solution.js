@@ -1,11 +1,17 @@
-function iterate (num) {
-  console.log(num);
-  return ++num;
-};
+'use strict';
 
-function alwaysThrows () {
-  throw new Error("OH NOES");
-};
+function iterate(num) {
+  console.log(num);
+  return num + 1;
+}
+
+function alwaysThrows() {
+  throw new Error('OH NOES');
+}
+
+function onReject(error) {
+  console.log(error.message);
+}
 
 Promise.resolve(iterate(1))
 .then(iterate)
@@ -18,4 +24,4 @@ Promise.resolve(iterate(1))
 .then(iterate)
 .then(iterate)
 .then(iterate)
-.then(null, console.log);
+.catch(onReject);
