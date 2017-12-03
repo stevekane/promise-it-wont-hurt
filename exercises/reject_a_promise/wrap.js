@@ -6,7 +6,12 @@ function wrap(ctx) {
   var savedPrototype;
 
   function isInUserCode(stack) {
-    return stack[0].getFileName().substring(0, ctx.mainProgram.length)
+    // fileName could be empty while user invoke native function, e.g. Promise
+    var fileName = stack[0].getFileName() 
+    if (!fileName) {
+      return false
+    }
+    return fileName.substring(0, ctx.mainProgram.length)
       === ctx.mainProgram;
   }
 
