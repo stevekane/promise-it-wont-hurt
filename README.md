@@ -41,6 +41,8 @@ Please regularly rerun the above command to get the latest set of exercises.
 
 ### 2. Docker
 
+Note for beginners: Do not do this if you do not have [docker](https://www.docker.com/) installed.
+
 ```
 alias promise-it-wont-hurt='docker run -it -v $(pwd):/root oreng/promises-workshop'
 
