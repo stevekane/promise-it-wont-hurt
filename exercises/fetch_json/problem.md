@@ -21,7 +21,7 @@ $ npm install q-io --save
 
 ## Task
 
-Fetch JSON from *http://localhost:1337* and `console.log` it.
+Fetch JSON from localhost:1337 (*http://localhost:1337*) and `console.log` it.
 
 There are several things you will want to know:
 
@@ -33,4 +33,4 @@ This challenge is a bit tricky but the implementation is relatively
 straightforward.  If you get stuck, refer to the `q-io` documentation for
 clarification:
 
-  https://github.com/kriskowal/q-io
+  github.com/kriskowal/q-io (https://github.com/kriskowal/q-io)

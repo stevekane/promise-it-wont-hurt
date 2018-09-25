@@ -20,7 +20,7 @@ $ npm install q-io --save
 
 ## 課題
 
-*http://localhost:1337* から JSON をフェッチして、`console.log` に出力します。
+localhost:1337 (*http://localhost:1337*) から JSON をフェッチして、`console.log` に出力します。
 いくつか知っておくべき事がります：
 
 1.`q-io` の `http` モジュールには成功した (ステータス200) HTTP リクエストの内容の Promise を返す `read` メソッドがあります。
@@ -30,5 +30,5 @@ $ npm install q-io --save
 動かない場合は、`q-io` のドキュメントを参照してください：
 
 
-  https://github.com/kriskowal/q-io
+  github.com/kriskowal/q-io https://github.com/kriskowal/q-io
 
