@@ -28,6 +28,8 @@ As a review from last lesson, a promise's `then` function takes two callbacks:
 the first to be called when the promise is fulfilled and the second when the
 promise is rejected.
 
+For more details on Error objects, you can check out the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error).
+
 ## Boilerplate
 
 ```js

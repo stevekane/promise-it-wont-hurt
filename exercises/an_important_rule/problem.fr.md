@@ -54,9 +54,9 @@ De nombreuses bibliothèques de promesses essaient de pallier à ce
 problème en vous fournissant un gestionnaire `done` pour traiter toute
 erreur qui n’aurait pas encore été traitée.  La règle d’or est simple :
 
-> Si vous **ne renvoyez pas** de valeur depuis votre promesse vers
-> le code appelant, ajouter un gestionnaire `done` en fin de chaîne
-> pour vous protéger contre les exceptions non traitées.
+*Si vous **ne renvoyez pas** de valeur depuis votre promesse vers
+le code appelant, ajouter un gestionnaire `done` en fin de chaîne
+pour vous protéger contre les exceptions non traitées.*
 
 Voici un exemple :
 
