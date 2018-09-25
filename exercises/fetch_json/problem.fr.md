@@ -22,7 +22,7 @@ $ npm install q-io --save
 
 ## Tâche
 
-Récupérez du JSON depuis `http://localhost:1337/` et passez-le à `console.log`.
+Récupérez du JSON depuis localhost:1337 (`http://localhost:1337/`) et passez-le à `console.log`.
 
 Il y a deux petites choses que vous devez savoir :
 
@@ -33,4 +33,4 @@ Il y a deux petites choses que vous devez savoir :
 Ce défi peut sembler avancé, mais l’implémentation est plutôt simple.  Si vous êtes
 bloqué-e, jetez un œil à la documentation de `q-io` pour plus d’informations :
 
-  https://github.com/kriskowal/q-io
+  github.com/kriskowal/q-io https://github.com/kriskowal/q-io
