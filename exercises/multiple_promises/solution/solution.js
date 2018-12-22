@@ -8,7 +8,7 @@ function all(a, b) {
     var out = [];
 
     a.then(function (val) {
-      out[0] = val;
+      out.push(val);
       counter++;
 
       if (counter >= 2) {
@@ -17,7 +17,7 @@ function all(a, b) {
     });
 
     b.then(function (val) {
-      out[1] = val;
+      out.push(val);
       counter++;
 
       if (counter >= 2) {
