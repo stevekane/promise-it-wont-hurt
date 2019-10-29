@@ -38,7 +38,7 @@
     "workshopper-timer": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb": "^4.0.0"
   }
 }
