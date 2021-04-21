@@ -31,9 +31,9 @@ Create a new directory to do your workshop work in.  Let's call it "promise-shop
 You will need to initialize npm in this repo.
 
 ```
-$ mkdir promise-shop && cd promise-shop
-$ npm init
-$ npm install -g promise-it-wont-hurt@latest
+mkdir promise-shop && cd promise-shop
+npm init
+npm install -g promise-it-wont-hurt@latest
 ```
 
 **Note**: the workshop is being updated weekly. 
@@ -62,7 +62,7 @@ Once the workshop is installed, run `promise-it-wont-hurt` to print a menu
 where you can select a problem to work on.
 
 ```
-$ promise-it-wont-hurt
+promise-it-wont-hurt
 ```
 
 Problems are listed in rough order of difficulty. You are advised to complete them in order, as later problems
